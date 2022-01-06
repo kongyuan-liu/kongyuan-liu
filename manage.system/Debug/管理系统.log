@@ -1,0 +1,7 @@
+﻿  管理系统 源.c
+C:\Users\空元\source\repos\管理系统\管理系统 源.c(63,35): warning C4133: “函数”: 从“Linklist”到“Node *”的类型不兼容
+C:\Users\空元\source\repos\管理系统\管理系统 源.c(80,19): warning C4020: “Insert”: 实参太多
+C:\Users\空元\source\repos\管理系统\管理系统 源.c(178,1): warning C4029: 声明的形参表不同于定义
+C:\Users\空元\source\repos\管理系统\管理系统 源.c(228,27): warning C4101: “r”: 未引用的局部变量
+C:\Users\空元\source\repos\管理系统\管理系统 源.c(289,52): warning C4028: 形参 2 与声明不同
+  管理系统.vcxproj -> C:\Users\空元\source\repos\管理系统\Debug\管理系统.exe
