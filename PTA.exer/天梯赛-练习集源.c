@@ -459,7 +459,58 @@ int main()
 			printf("%c", arr[i]);
 	}
 }*/
-
+//L1-033 出生年
+/*#include<stdio.h>
+int func(int y);
+int main()
+{
+	int year; int n;
+	int age = 0;
+	scanf("%d %d", &year, &n);
+	while (func(year) != n) {
+		age++;
+		year++;
+	}
+	printf("%d %04d", age, year);
+}
+int func(int y)
+{
+	int a[10] = { 0 };
+	int res = 0, i;
+	a[y % 10] = 1;
+	a[y / 10 % 10] = 1;
+	a[y / 100 % 10] = 1;
+	a[y / 1000 % 10] = 1;
+	for (i = 0; i < 10; i++) {
+		if (a[i] == 1) res++;
+	}
+	return res;
+}*/
+//L1-034 点赞
+/*#include<stdio.h>
+int main()
+{
+	int n; scanf("%d", &n);
+	int num, r; int a[1005] = { 0 }, b[1005];
+	int i;
+	int dex = 0, max = 0;
+	while (n--) {
+		scanf("%d", &num);
+		while (num--) {
+			scanf("%d", &r);
+			a[r]++;
+		}
+	}
+	for (i = 1; i < 1005; i++)
+	{
+		if (a[i] >= a[dex]) {
+			dex = i;
+			max = a[i];
+		}
+	}
+	printf("%d %d", dex, max);
+	return 0;
+}*/
 
 
 
