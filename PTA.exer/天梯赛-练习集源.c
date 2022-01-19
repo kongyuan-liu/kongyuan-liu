@@ -511,10 +511,158 @@ int main()
 	printf("%d %d", dex, max);
 	return 0;
 }*/
-
-
-
-
+//L1-040 最佳情侣身高差
+/*#include<stdio.h>
+int main() {
+	int n;
+	scanf("%d", &n);
+	int i;
+	char sex; double h, hi;
+	while (n--) {
+		scanf(" %c ", &sex);//空格是个坑
+		scanf("%lf", &h);
+		if (sex == 'F')
+			hi = h * 1.09;
+		else
+			hi = h / 1.09;
+		printf("%.2lf\n", hi);
+	}
+}*/
+//L1-043 阅览室
+/*#include<stdio.h>
+#include<math.h>
+typedef struct infor
+{
+	int num;
+	char c;
+	int h;
+	int m;
+}Infor;
+int main()
+{
+	int n, i;
+	int cnt = 0,id;
+	int time = 0;
+	double T;
+	Infor s[1005] = { 0 }, temp;
+	scanf("%d", &n);
+	while (n--) {
+		while(1){
+			scanf("%d %c %d:%d", &id,&temp.c,&temp.h,&temp.m);
+			if (id == 0)
+				break;
+			if (temp.c == 'S') {
+				s[id] = temp;
+				s[id].num = 1;
+			}
+			if (temp.c == 'E') {
+				if (s[id].num == 1) {
+					cnt++;
+					time += (temp.h - s[id].h) * 60 + (temp.m - s[id].m);
+					s[id].num = 0;
+				}
+			}
+		}
+		if (cnt == 0) T = 0;
+		else T = time * 1.0 / cnt;
+	    printf("%d %g\n", cnt,round(T));
+		cnt = 0, time = 0;
+		for (i = 0; i < 1005; i++)
+			s[i].num = 0;
+	}
+}*/
+//L1-044 稳赢
+/*#include<stdio.h>
+#include<string.h>
+int main() {
+	int n; scanf("%d", &n);
+	int len,num,cnt=0;
+	num = n+1;
+	while (1) {
+		char a[10] = { 0 };
+		scanf("%s", a);
+		if (strcmp(a, "End") == 0)
+			break;
+		cnt++;
+		len = strlen(a);
+		if (cnt % num != 0) {
+			switch (len) {
+			case 6:
+				printf("Bu\n"); break;
+			case 7:
+				printf("ChuiZi\n"); break;
+			case 2:
+				printf("JianDao\n"); break;
+			}
+		}
+		else printf("%s\n", a);
+	}
+}*/
+//L1-049 天梯赛座位分配
+//#include<stdio.h>
+//int main() {
+//	int N; scanf("%d", &N);
+//	int M[105] = { 0 };
+//	int m[105] = { 0 };
+//	int i = 0, j, h;
+//	for (i = 1; i <= N;i++) {
+//		scanf("%d",&M[i]);
+//	}
+//	int cnt, temp ;
+//	for (j = 1; j <= N; j++) {
+//		printf("#%d\n", j);
+//		cnt = j, temp = N;
+//		for (i = 1; i <= M[j] * 10;i++) {
+//			if (i%10!=1)
+//				printf(" ");
+//			printf("%d", cnt);
+//			if (i % 10 == 0)
+//				printf("\n");
+//			if (j == 1) {
+//				for (h = 1; h <= N; h++) {
+//					if (i > M[h] * 10 && temp > 2) {
+//						temp--;
+//						m[j] = cnt;
+//					}
+//				}
+//			}
+//			else {
+//				for (h = 1; h <= N; h++) {
+//					if (i >= M[h] * 10 && temp > 2)
+//						temp--;
+//				}
+//			}
+//			cnt += temp;
+//		}
+//	}
+//	return 0;
+//}
+//#include<stdio.h>
+//#include<string.h>
+//int main()
+//{
+//	int a[105][12][10];
+//	int i, j, k;
+//	int m[105] = { 0 };
+//	int n; scanf("%d", &n);
+//	int countmax = 0;
+//	for (i = 0; i < n; i++) {
+//		scanf("%d", &m[i]);
+//		if (m[i] > countmax) {
+//			countmax = m[i];
+//		}
+//	}
+//	int lasti = -1;
+//	int num = 0;
+//	for () {
+//		for () {
+//			for{
+//
+//			}
+//		}
+//	}
+//
+//}
 
 
 
