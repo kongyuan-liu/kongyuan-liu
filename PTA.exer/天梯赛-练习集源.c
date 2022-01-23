@@ -598,71 +598,67 @@ int main() {
 		else printf("%s\n", a);
 	}
 }*/
-//L1-049 天梯赛座位分配
-//#include<stdio.h>
-//int main() {
-//	int N; scanf("%d", &N);
-//	int M[105] = { 0 };
-//	int m[105] = { 0 };
-//	int i = 0, j, h;
-//	for (i = 1; i <= N;i++) {
-//		scanf("%d",&M[i]);
-//	}
-//	int cnt, temp ;
-//	for (j = 1; j <= N; j++) {
-//		printf("#%d\n", j);
-//		cnt = j, temp = N;
-//		for (i = 1; i <= M[j] * 10;i++) {
-//			if (i%10!=1)
-//				printf(" ");
-//			printf("%d", cnt);
-//			if (i % 10 == 0)
-//				printf("\n");
-//			if (j == 1) {
-//				for (h = 1; h <= N; h++) {
-//					if (i > M[h] * 10 && temp > 2) {
-//						temp--;
-//						m[j] = cnt;
-//					}
-//				}
-//			}
-//			else {
-//				for (h = 1; h <= N; h++) {
-//					if (i >= M[h] * 10 && temp > 2)
-//						temp--;
-//				}
-//			}
-//			cnt += temp;
-//		}
-//	}
-//	return 0;
-//}
-//#include<stdio.h>
-//#include<string.h>
-//int main()
-//{
-//	int a[105][12][10];
-//	int i, j, k;
-//	int m[105] = { 0 };
-//	int n; scanf("%d", &n);
-//	int countmax = 0;
-//	for (i = 0; i < n; i++) {
-//		scanf("%d", &m[i]);
-//		if (m[i] > countmax) {
-//			countmax = m[i];
-//		}
-//	}
-//	int lasti = -1;
-//	int num = 0;
-//	for () {
-//		for () {
-//			for{
-//
-//			}
-//		}
-//	}
-//
-//}
+//************************L1-049 天梯赛座位分配
+/*#include<stdio.h>
+#include<string.h>
+int main()
+{
+	int a[105][12][10];
+	int i, j, k;
+	int m[105] = { 0 };
+	int n; scanf("%d", &n);
+	int countmax = 0;
+	for (i = 0; i < n; i++) {
+		scanf("%d", &m[i]);//记录每个学校的队伍数
+		if (m[i] > countmax) {
+			countmax = m[i];
+		}
+	}
+	int lasti = -1;
+	int num = 0;
+	for (j = 0; j < countmax; j++) {
+		for (k = 0; k < 10; k++) {
+			for (i = 0; i < n; i++) {
+				if (j < m[i]) {
+					if (lasti == i) {
+						num += 2;
+					}
+					else {
+						num++;
+					}
+					lasti = i;
+					a[i][j][k] = num;
+				}
+			}
+		}
+	}
+	for (i = 0; i < n; i++) {
+		printf("#%d\n", i + 1);
+		for (j = 0; j < m[i]; j++) {
+			for (k = 0; k < 9; k++) {
+				printf("%d ", a[i][j][k]);
+			}
+			printf("%d\n", a[i][j][k]);
+		}
+	}
+	return 0;
+}*/
+//L1-050 倒数第N个字符串
+/*#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int l, n;
+	scanf("%d %d", &l, &n);
+	n--;
+	int i, a;
+	for (i = 1; i <= l; i++) {
+		a = pow(26, l - i);
+		printf("%c", 'z' - n / a);
+		n %= a;
+	}
+	return 0;
+}*/
 
 
 

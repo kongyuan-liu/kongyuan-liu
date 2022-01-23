@@ -1,2 +1,5 @@
 ﻿  天梯赛-练习集源.c
-  PTA题目2.0.vcxproj -> C:\Users\空元\source\repos\PTA题目2.0\PTA.exer\Debug\PTA题目2.0.exe
+C:\Users\空元\source\repos\PTA题目2.0\PTA.exer\天梯赛-练习集源.c(672,7): warning C4013: “gets”未定义；假设外部返回 int
+C:\Users\空元\source\repos\PTA题目2.0\PTA.exer\天梯赛-练习集源.c(674,8): warning C4047: “=”:“char [105][105]”与“char *”的间接级别不同
+C:\Users\空元\source\repos\PTA题目2.0\PTA.exer\天梯赛-练习集源.c(674,8): error C2106: “=”: 左操作数必须为左值
+C:\Users\空元\source\repos\PTA题目2.0\PTA.exer\天梯赛-练习集源.c(668,1): warning C4047: “初始化”:“char *”与“char (*)[105]”的间接级别不同
