@@ -1,1 +1,17 @@
 exercise
+//L1-050 倒数第N个字符串
+/*#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int l, n;
+	scanf("%d %d", &l, &n);
+	n--;
+	int i, a;
+	for (i = 1; i <= l; i++) {
+		a = pow(26, l - i);
+		printf("%c", 'z' - n / a);
+		n %= a;
+	}
+	return 0;
+}*/
