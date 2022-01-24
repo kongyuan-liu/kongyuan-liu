@@ -659,7 +659,67 @@ int main()
 	}
 	return 0;
 }*/
-
+//L1-056 猜数字
+/*#include<stdio.h>
+#include<math.h>
+typedef struct STU
+{
+	char arr[10];//數組盡量開大一些，否則最後一個點不過
+	int num;
+}stu;
+int main()
+{
+	stu s1[10005] = { 0 }, t;
+	int sum = 0;
+	int i, n;
+	scanf("%d", &n);
+	for (i = 0; i < n; i++) {
+		scanf("%s %d", s1[i].arr, &s1[i].num);
+		sum += s1[i].num;
+	}
+	double	ave = sum / (n * 2.0);
+	double mincount = fabs(ave - s1[0].num);
+	t = s1[0];//初始化很重要，否則到第三個點無法通過
+	for (i = 0; i < n; i++) {
+		if (mincount > fabs(ave-s1[i].num)) {
+			mincount = fabs(ave-s1[i].num);//絕對值函數
+			t = s1[i];
+		}
+	}
+	printf("%g %s", floor(ave), t.arr);//取整函數<math.h>
+	return 0;
+}*/
+//L1-058 6翻了
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	char arr[1010] = { 0 };
+	gets(arr);
+	int len = strlen(arr), i, j;
+	int count = 0;
+	for (i = 0; i <= len; i++)//如果字符串末尾是一串連續且符合題意的'6'，則什麽也不打印，所以必須多一次循環
+	{//可以思考一下爲什麽要先輸出數字字符，而非非數字字符
+		if (arr[i] != '6') {
+			if (count > 0 && count <= 3) {
+				for (j = 0; j < count; j++) {
+					printf("6");
+				}
+			}
+			else if (count > 3 && count <= 9) {
+				printf("9");
+			}
+			else if (count > 9)
+				printf("27");
+			printf("%c", arr[i]);
+			count = 0;//記得初始化
+		}
+		else {
+			count++;
+		}
+	}
+	return 0;
+}
 
 
 
