@@ -690,7 +690,7 @@ int main()
 	return 0;
 }*/
 //L1-058 6翻了
-#include<stdio.h>
+/*#include<stdio.h>
 #include<string.h>
 int main()
 {
@@ -719,8 +719,77 @@ int main()
 		}
 	}
 	return 0;
+}*/
+//L1-059 敲笨钟
+#include<stdio.h>
+#include<string.h>
+int Judge(char* a, int i);
+void Printf(char* a, int i);
+int main()
+{
+	int n; scanf("%d", &n);
+	int i, j;
+	int len, flag = 0;
+	getchar();//用於清空緩衝區的'\n'
+	for (i = 0; i < n; i++) {
+		char arr[105] = { 0 };
+		gets(arr);//gets()本事讀到'\n'停止，以'\0'結尾，但'\n'不會遺留在緩存區（scanf會）
+		len = strlen(arr);
+		for (j = 0; j < len; j++) {
+			if (arr[j] == ',') {
+				flag=Judge(arr, j);
+				if (flag == 0) {
+					printf("Skipped\n");
+					break;
+				}
+				flag = 0;
+			}
+			if (arr[j] == '.') {
+				flag = Judge(arr, j);
+				if (flag == 1) {
+					Printf(arr, j);
+				}
+				else {
+					printf("Skipped\n");
+					break;
+				}
+			}
+		}
+	}
 }
-
+int Judge(char* a, int i) 
+{
+	if (a[i - 3] == 'o' && a[i - 2] == 'n' && a[i - 1] == 'g') {
+		return 1;
+	}
+	else {
+		return 0;
+	}
+}
+void Printf(char* a, int i) 
+{
+	char ter[] = "qiao ben zhong.";
+	int j,k;
+	int count = 0;
+	for (j = i; j >= 0; j--) {
+		if (a[j] == ' ') {
+			count++;
+		}
+		if (count == 3) {
+/*			for (k = 0; k < strlen(ter); k++) {
+				a[++j] = ter[k];
+			}
+			printf("%s\n", a);
+			return 0;*/ //若後三個詞的長度大於ter數組的長度，則無法完全覆蓋
+			k = j;
+			break;
+		}
+	}
+	for (j = 0; j <= k; j++) {
+		printf("%c", a[j]);
+	}
+	printf("%s\n", ter);
+}
 
 
 
