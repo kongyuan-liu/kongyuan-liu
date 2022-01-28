@@ -790,38 +790,66 @@ void Printf(char* a, int i)
 	}
 	printf("%s\n", ter);
 }*/
-//L1-063 吃鱼还是吃肉
+//L1 - 075 强迫症
+/*#include<string.h>
 #include<stdio.h>
 int main()
 {
-	int n, s, t, a;//用a表示男女，s表示身高，t表示体重，n表示循环次数
-	scanf("%d", &n);
-	while (n--)
-	{
-		scanf("%d %d %d", &a, &s, &t);
-		if (a == 1)//判断是不是男孩
+	char arr[10] = { 0 }, a[10] = { 0 };
+	scanf("%s", arr);
+	int len = strlen(arr);
+	int i, temp = 0;
+	if (len == 4) {
+		temp = (arr[0] - '0') * 10 + (arr[1] - '0');
+		if (temp >= 22)
+			a[0] = '1', a[1] = '9';
+		else
+			a[0] = '2', a[1] = '0';
+		for (i = 0; i < 4; i++)
 		{
-			if (s < 130) printf("duo chi yu! ");
-			if (s == 130) printf("wan mei! ");
-			if (s > 130) printf("ni li hai! ");
-			if (t < 27) printf("duo chi rou!\n");
-			if (t == 27) printf("wan mei!\n");
-			if (t > 27) printf("shao chi rou!\n");
-		}
-		if (a == 0)//判断是不是女孩
-		{
-			if (s < 129) printf("duo chi yu! ");
-			if (s == 129) printf("wan mei! ");
-			if (s > 129) printf("ni li hai! ");
-			if (t < 25) printf("duo chi rou!\n");
-			if (t == 25) printf("wan mei!\n");
-			if (t > 25) printf("shao chi rou!\n");
+			a[i + 2] = arr[i];
 		}
 	}
-	return 0;
+	else
+		strcpy(a, arr);
+	for (i = 0; i < 6; i++)
+	{
+		if (i == 4)
+			printf("-");
+		printf("%c", a[i]);
+	}
+}*/
+//L1-078 吉老师的回归
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+
+	int n, m; scanf("%d %d", &n, &m);
+	getchar();//清空緩存區的'/n'
+	int i, count = 0, k = 0;
+	char* ret1, * ret2;
+	char a[90] = { 0 };
+	char s1[] = "qiandao", s2[] = "easy";
+	for (i = 0; i < n; i++) {
+		char arr[90] = { 0 };
+		gets(arr);
+		ret1 = strstr(arr, s1);//此函數用來查找s1在arr中出現的位置，返回值為地址，未找到則返回NULL
+		ret2 = strstr(arr, s2);
+		if (ret1 == NULL && ret2 == NULL) {
+			if (k == m) {
+				strcpy(a, arr);//複製數組arr
+			}
+			count++;//該做的題的個數
+		}
+		if (count == m)
+			k = count;
+	}
+	if (count <= m)
+		printf("Wo AK le");
+	else
+		printf("%s", a);
 }
-
-
 
 
 
