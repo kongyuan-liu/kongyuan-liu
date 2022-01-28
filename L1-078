@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+
+	int n, m; scanf("%d %d", &n, &m);
+	getchar();//清空緩存區的'/n'
+	int i, count = 0, k = 0;
+	char* ret1, * ret2;
+	char a[90] = { 0 };
+	char s1[] = "qiandao", s2[] = "easy";
+	for (i = 0; i < n; i++) {
+		char arr[90] = { 0 };
+		gets(arr);
+		ret1 = strstr(arr, s1);//此函數用來查找s1在arr中出現的位置，返回值為地址，未找到則返回NULL
+		ret2 = strstr(arr, s2);
+		if (ret1 == NULL && ret2 == NULL) {
+			if (k == m) {
+				strcpy(a, arr);//複製數組arr
+			}
+			count++;//該做的題的個數
+		}
+		if (count == m)
+			k = count;
+	}
+	if (count <= m)
+		printf("Wo AK le");
+	else
+		printf("%s", a);
+}
