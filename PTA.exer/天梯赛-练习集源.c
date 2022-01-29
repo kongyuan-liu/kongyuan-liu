@@ -820,7 +820,7 @@ int main()
 	}
 }*/
 //L1-078 吉老师的回归
-#include<stdio.h>
+/*#include<stdio.h>
 #include<string.h>
 int main()
 {
@@ -849,19 +849,78 @@ int main()
 		printf("Wo AK le");
 	else
 		printf("%s", a);
+}*/
+//L1-002 打印沙漏
+/*#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int n; char chara;
+	scanf("%d %c", &n, &chara);
+	int i, diff = 0,j, num = 0;
+	num = (n + 1) / 2;
+	num = (int)sqrt(num);//上三角層數,整個沙漏個數為num*num*2-1
+	diff = n - (num * num * 2 - 1);
+	for (i = 0; i < num; i++) {
+		for (j = i; j > 0; j--) {
+			printf(" ");
+		}
+		for (j = 0; j < 2 * (num - i) - 1; j++) {
+			printf("%c", chara);
+		}
+		printf("\n");
+	}
+	for (i = 1; i < num; i++) {
+		for (j = num - i - 1; j > 0; j--) {
+			printf(" ");
+		}
+		for (j = 0; j < 2 * i + 1; j++) {
+			printf("%c", chara);
+		}
+		printf("\n");
+	}
+	printf("%d", diff);
+	return 0;
+}*/
+//打印沙漏升級版
+     //思路：有上三角層數轉到整個圖形的層數對稱
+  /*#include<stdio.h>
+#include<math.h>
+void print(char ch, int count) {
+	while (count-- > 0)putchar(ch);
+}	//print(ch,c)：打印ch字符c遍。
+int main() {
+	int n, ch, h, i;
+	scanf("%d %c", &n, &ch);
+	h = (int)sqrt((n + 1) / 2); //h=g(n)
+	for (i = 1 - h; i < h; i++) {//對稱
+		int j = abs(i);
+		print(' ', h - 1 - j);	//空格
+		print(ch, 2 * j + 1);	//ch
+		putchar('\n');	//换行
+	}
+	printf("%d", n - (2 * h * h - 1));
+	return 0;
+}*/
+//打印菱形（同上）
+  /*#include<stdio.h>
+#include<math.h>
+void print(char ch, int cnt) {
+	while (cnt-- > 0)printf("%c", ch);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
+int main()
+{
+	int n; char ch;
+	scanf("%d %c", &n, &ch);
+	int h = (int)sqrt((n + 1) / 2);
+	int i, j;
+	for (i = 1 - h; i < h; i++) {
+		print(' ', abs(i));
+		print(ch, 2 * (h - abs(i)) - 1);
+		printf("\n");
+	}
+	printf("%d", n - h * h * 2 + 1);
+	return 0;
+}*/
 
 
