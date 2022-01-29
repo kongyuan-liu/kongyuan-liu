@@ -1,0 +1,20 @@
+//打印沙漏升級版
+     //思路：有上三角層數轉到整個圖形的層數對稱
+  /*#include<stdio.h>
+#include<math.h>
+void print(char ch, int count) {
+	while (count-- > 0)putchar(ch);
+}	//print(ch,c)：打印ch字符c遍。
+int main() {
+	int n, ch, h, i;
+	scanf("%d %c", &n, &ch);
+	h = (int)sqrt((n + 1) / 2); //h=g(n)
+	for (i = 1 - h; i < h; i++) {//對稱
+		int j = abs(i);
+		print(' ', h - 1 - j);	//空格
+		print(ch, 2 * j + 1);	//ch
+		putchar('\n');	//换行
+	}
+	printf("%d", n - (2 * h * h - 1));
+	return 0;
+}*/
