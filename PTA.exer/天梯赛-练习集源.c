@@ -922,5 +922,48 @@ int main()
 	printf("%d", n - h * h * 2 + 1);
 	return 0;
 }*/
-
-
+//L1-006 连续因子
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+int isPrime(int n);
+int main() 
+{
+	int n; scanf("%d", &n);
+	int temp, count, max = 0, flag = 0;
+	if (isPrime(n)) {
+		printf("1\n%d", n);
+		return 0;
+	}
+	for (int i = 2; i <= sqrt(n); i++) {
+		temp = n;
+		count = 0;
+		for (int j = i; j <= sqrt(n); j++) {
+			if (temp % j == 0) {
+				count++;
+				temp /= j;
+			}
+			else
+				break;
+		}
+		if (count > max) {
+			max = count;
+			flag = i;
+		}
+	}
+	printf("%d\n", max);
+	for (int i = flag; i < flag + max - 1; i++)
+		printf("%d*", i);
+	printf("%d", flag + max - 1);
+	return 0;
+}
+int isPrime(int n)
+{
+	if (n == 1)
+		return 0;
+	for (int i = 2; i <= sqrt(n); i++) {
+		if (n % i == 0)
+			return 0;
+	}
+	return 1;
+}
