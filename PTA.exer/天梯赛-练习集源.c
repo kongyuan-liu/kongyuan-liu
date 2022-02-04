@@ -923,7 +923,7 @@ int main()
 	return 0;
 }*/
 //L1-006 连续因子
-#include<stdio.h>
+/*#include<stdio.h>
 #include<math.h>
 #include<stdlib.h>
 int isPrime(int n);
@@ -966,4 +966,41 @@ int isPrime(int n)
 			return 0;
 	}
 	return 1;
+}*/
+//L1-009 N个数求和
+/*#include<stdio.h>
+#include<math.h>
+int gcd(long int a, long int b);//取兩個數最大公約數(輾轉相除法)
+int main()
+{
+	int n; scanf("%d", &n);
+	int fz = 0, fm = 1;
+	long pub = 0, whole = 0;
+	long int a, b;
+	int flag = 0;
+	while (n--) {
+		scanf("%ld/%ld", &a, &b);
+		fz = fz * b + a * fm;
+		fm *= b;
+		pub=gcd(abs(fz), abs(fm));
+		fz /= pub;
+		fm /= pub;
+	}
+	if (fz && fz / fm == 0) {
+		printf("%d/%d", fz, fm);
+		return 0;
+	}
+	else if (fz % fm == 0) {
+		printf("%d", fz / fm);
+		return 0;
+	}
+	else {
+		printf("%d %d/%d", fz / fm, fz % fm, fm);
+	}
 }
+int gcd(long int a, long int b) {
+	if (b == 0)
+		return a;
+	int c = a % b;
+	return gcd(b, c);
+}*/
