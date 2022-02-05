@@ -1,0 +1,33 @@
+
+import java.util.Scanner;
+public class Main{
+    public static void main(String[]arge){
+        Scanner scan=new Scanner(System.in);
+        String str;
+//        int n=scan.nextInt();
+        int n=Integer.parseInt(scan.nextLine());
+        for(int i=0;i<n;i++){
+            str=scan.nextLine();//整行輸入
+            System.out.println(str);//先原樣輸出
+            String cstr="";
+            char chars[]=str.toCharArray();//字符串轉爲數組
+            for(int j=0;j<chars.length;j++){
+                if(chars[j]>='A'&&chars[j]<='Z'&&chars[j]!='I'){
+                    chars[j]+=32;
+            }
+                cstr+=chars[j];
+            }
+            cstr=cstr.trim();//去掉首位多餘的空格
+            cstr=cstr.replaceAll(" +"," ");//相鄰單詞間的多個空格換爲一個空格
+            cstr=cstr.replaceAll(" (\\W)","$1");
+            cstr=cstr.replaceAll("\\?","!");
+            cstr=cstr.replaceAll("\\bcan you\\b","A");
+            cstr=cstr.replaceAll("\\bcould you\\b","B");
+            cstr=cstr.replaceAll("\\b(I|me)\\b","C");
+            cstr=cstr.replaceAll("A","I can");
+            cstr=cstr.replaceAll("B","I could");
+            cstr=cstr.replaceAll("C","you");
+            System.out.println("AI: "+cstr);
+        }
+    }
+}
