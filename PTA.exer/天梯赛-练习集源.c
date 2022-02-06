@@ -1004,3 +1004,56 @@ int gcd(long int a, long int b) {
 	int c = a % b;
 	return gcd(b, c);
 }*/
+//L1-079 天梯赛的善良
+/*#include<stdio.h>
+#define N 10010*2
+int main()
+{
+	int n; scanf("%d", &n);
+	int a[N] = { 0 };
+	int i;
+	int max = 0, min = 0, cmax = 0, cmin = 0;
+	for (i = 0; i < n; i++) {
+		scanf("%d", &a[i]);
+		if (i == 0)
+			min = a[i];
+		if (min > a[i])
+			min = a[i];
+		if (max < a[i])
+			max = a[i];
+	}
+	for (i = 0; i < n; i++) {
+		if (a[i] == min)
+			cmin++;
+		if (a[i] == max)
+			cmax++;
+	}
+	printf("%d %d\n", min, cmin);
+	printf("%d %d\n", max, cmax);
+}*/
+//L1-080 乘法口诀数列
+/*#include<stdio.h>
+int main()
+{
+	int n;
+	int arr[10050] = { 0 };
+	scanf("%d %d %d", &arr[1], &arr[2], &n);
+	int i, cnt = 3;
+	int shu;
+	for (i = 3; i <= n; i++) {
+		shu = arr[i - 1] * arr[i - 2];
+		if (shu < 10)
+			arr[cnt++] = shu;
+		else {
+			arr[cnt++] = shu / 10;
+			arr[cnt++] = shu % 10;
+		}
+	}
+	for (i = 1; i <= n; i++)
+	{
+		if (i != 1)
+			printf(" ");
+		printf("%d", arr[i]);
+	}
+}*/
+//L2-001 紧急救援
