@@ -1,0 +1,123 @@
+class BinayTreeDemo {
+    public static void main(String[] args) {
+        //先創建一顆二叉樹
+        BinayTree binayTree=new BinayTree();
+        //創建需要的節點
+        HeroNode root=new HeroNode(1,"宋江");
+        HeroNode node2=new HeroNode(2,"吳用");
+        HeroNode node3=new HeroNode(3,"林冲");
+        HeroNode node4=new HeroNode(4,"李逵");
+        HeroNode node5=new HeroNode(5,"關勝");
+        //先手動創建二叉樹
+        root.setLeft(node2);
+        root.setRight(node3);
+        node3.setRight(node4);
+        node3.setLeft(node5);
+        binayTree.setRoot(root);
+
+        root.postOrder();
+    }
+}
+//定義二叉樹BinaryTree
+class BinayTree{
+    private HeroNode root;
+
+    public void setRoot(HeroNode root){
+        this.root=root;
+    }
+    //前序遍歷
+    public void preOrder(){
+        if(this.root!=null){
+            this.root.preOrder();
+        }else{
+            System.out.println("二叉樹爲空，無法遍歷");
+        }
+    }
+    //中序遍歷
+    public void infixOrder(){
+        if(this.root!=null){
+            this.root.infixOrder();
+        }else{
+            System.out.println("二叉樹爲空，無法遍歷");
+        }
+    }
+    //后序遍歷
+    public void postOrder(){
+        if(this.root!=null){
+            this.root.postOrder();
+        }else{
+            System.out.println("二叉樹爲空，無法遍歷");
+        }
+    }
+}
+//先創建節點HeroNode
+class HeroNode{
+    private int no;
+    private String name;
+    private HeroNode left;//默認null
+    private HeroNode right;//默認null
+    public HeroNode(int no,String name){
+        this.no=no;
+        this.name=name;
+    }
+    public void setNo(int no){
+        this.no=no;
+    }
+    public int getNo(){
+        return no;
+    }
+    public void setName(String name){
+        this.name=name;
+    }
+    public String getName(){
+        return name;
+    }
+    public void setLeft(HeroNode left){
+        this.left=left;
+    }
+    public HeroNode getLeft(){
+        return left;
+    }
+    public void setRight(HeroNode right){
+        this.right=right;
+    }
+    public HeroNode getRight(){
+        return right;
+    }
+    public String toString(){
+        return "HeroNode[no="+no+",name="+name+"]";
+    }
+    //編寫前序遍歷方法
+    public void preOrder(){
+        System.out.println(this);//頭
+        //遞歸左子樹
+        if(this.left!=null){
+            this.left.preOrder();
+        }
+        //遞歸右子樹
+        if(this.right!=null){
+            this.right.preOrder();
+        }
+    }
+    //中序
+    public void infixOrder(){
+        if(this.left!=null){
+            this.left.infixOrder();
+        }
+        System.out.println(this);
+        if(this.right!=null){
+            this.right.infixOrder();
+        }
+    }
+    //后序
+    public void postOrder(){
+        if(this.left!=null){
+            this.left.postOrder();
+        }
+        if(this.right!=null){
+            this.right.postOrder();
+        }
+        System.out.println(this);
+    }
+
+}
