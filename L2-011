@@ -1,0 +1,59 @@
+//L2-011 玩转二叉树
+class HeroNode{
+    int data;
+    HeroNode left,right;
+}
+class L211{
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int n=scan.nextInt();
+        int[]in=new int[n+1];
+        int[]pre=new int[n+1];
+        for(int i=0;i<n;i++){
+            in[i]=scan.nextInt();
+        }
+        for(int i=0;i<n;i++){
+            pre[i]=scan.nextInt();
+        }
+        HeroNode root=BuildTree(in,0,pre,0,n);
+        LevelOrder(root);
+    }
+    public static HeroNode BuildTree(int[]in,int is,int[]pre,int ps,int n){
+        if(n<=0)
+            return null;
+        HeroNode heroNode=new HeroNode();
+        heroNode.data=pre[ps];
+        int i;
+        for(i=0;i<n;i++){
+            if(in[i+is]== heroNode.data)
+                break;
+        }
+        heroNode.left=BuildTree(in,is,pre,ps+1,i);
+        heroNode.right=BuildTree(in,i+1+is,pre,ps+i+1,n-1-i);
+        return heroNode;
+    }
+    public static void LevelOrder(HeroNode node){
+        boolean isFlag=false;
+        HeroNode current=node;
+        if(current==null)
+            return;
+        Queue<HeroNode>queue=new LinkedList<HeroNode>();
+        queue.offer(current);
+        while(!queue.isEmpty()){
+            current=queue.poll();
+            if(isFlag==false){
+                System.out.print(current.data);
+                isFlag=true;
+            }else{
+                System.out.print(" "+current.data);
+            }
+            if(current.right!=null){
+                queue.offer(current.right);
+            }
+            if(current.left!=null){
+                queue.offer(current.left);
+            }
+        }
+    }
+}

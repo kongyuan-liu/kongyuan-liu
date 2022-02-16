@@ -1,0 +1,52 @@
+class L24{
+    static boolean isFlag=false;
+    static Vector<Integer> pre=new Vector<Integer>();
+    static Vector<Integer> post=new Vector<>();
+    public static void main(String[] args) {
+        Scanner scan=new Scanner(System.in);
+        int n=scan.nextInt();
+        for(int i=0;i<n;i++){
+            pre.add(scan.nextInt());
+        }
+        getPost(0,n-1);
+        if(post.size()==0){
+            isFlag=true;
+            post.clear();
+            getPost(0,n-1);
+        }
+        if(post.size()==n){
+            System.out.println("YES");
+            for(int i=0;i<n;i++){
+                System.out.print(post.get(i)+" ");
+            }
+        }else{
+            System.out.println("NO");
+        }
+    }
+    private static void getPost(int root,int tail){
+        int i=root+1;
+        int j=tail;
+        if(root>tail)
+            return;
+        if(!isFlag) {
+            while (i <= tail && pre.get(i) < pre.get(root)) {
+                i++;
+            }
+            while(j>root&&pre.get(j)>=pre.get(root)){
+                j--;
+            }
+        }else{
+            while (i <= tail && pre.get(i) >= pre.get(root)) {
+                i++;
+            }
+            while(j>root&&pre.get(j)<pre.get(root)){
+                j--;
+            }
+        }
+        if(i-j!=1)
+            return;
+        getPost(root+1,j);
+        getPost(i,tail);
+        post.add(pre.get(root));
+    }
+}
