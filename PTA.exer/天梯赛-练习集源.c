@@ -1056,4 +1056,112 @@ int main()
 		printf("%d", arr[i]);
 	}
 }*/
-//L2-001 紧急救援
+//L2-003 月饼
+/*#include<stdio.h>
+#include<stdlib.h>
+#define N 1111;
+typedef struct te {
+	double sum;//庫存
+	double price;//總價
+	double sale;//單價
+}Node;
+int n;
+double need;//需求
+double p = 0;//收益
+int main() 
+{
+	int i, j;
+	scanf("%d %lf", &n, &need);
+	Node list[1111] = { 0 },temp;
+	for (i = 0; i < n; i++)
+	{
+		scanf("%lf", &list[i].sum);
+	}
+	for (i = 0; i < n; i++)
+	{
+		scanf("%lf", &list[i].price);
+		list[i].sale = list[i].price / list[i].sum;
+	}
+	for (i = 0; i < n - 1; i++) {
+		for (j = 0; j < n - 1 - i; j++) {
+			if (list[j].sale < list[j + 1].sale) {
+				temp = list[j + 1];
+				list[j + 1] = list[j];
+				list[j] = temp;
+			}
+		}
+	}
+	for (i = 0; i < n && need>0; i++) {
+		if (need <= list[i].sum) {
+			p += need * list[i].sale;
+			need = 0;
+		}
+		else {
+			p += list[i].price;
+			need -= list[i].sum;
+		}
+	}
+	printf("%.2lf", p);
+}*/
+//L2-010 排座位-查并集
+/*#include<stdio.h>
+int Fri[105] = { 0 };
+int m1, m2, flag, i;
+int vim[105][105] = { 0 };
+void init();
+int find(int n);
+void Unio(int a, int b);
+int main()
+{
+	int n, m, k;
+	scanf("%d %d %d", &n, &m, &k);
+	init();
+	for (i = 0; i < m; i++) {
+		scanf("%d %d %d", &m1, &m2, &flag);
+		if (flag == 1) {
+			Unio(m1, m2);
+		}
+		else {
+			vim[m1][m2] = 1;
+			vim[m2][m1] = 1;
+		}
+	}
+	for (i = 0; i < k; i++) {
+		scanf("%d %d", &m1, &m2);
+		int M1 = find(m1);
+		int M2 = find(m2);
+		if (M1 == M2&&vim[m1][m2]==0) {
+			printf("No problem\n");
+		}
+		else if (M1 != M2 && vim[m1][m2] == 0) {
+			printf("OK\n");
+		}
+		else if (M1 == M2 && vim[m1][m2] == 1) {
+			printf("OK but...\n");
+		}
+		else {
+			printf("No way\n");
+		}
+	}
+}
+void init() {
+	for (i = 0; i < 105; i++) {
+		Fri[i] = i;
+	}
+}
+int find(int n) {
+	int r = n;
+	while (Fri[r] != r) {
+		r = Fri[r];
+	}
+	return  r;
+}
+void Unio(int a, int b) {
+	int a_ = find(a);
+	int b_ = find(b);
+	if (a_ == b_)
+		return;
+	else {
+		Fri[a_] = b_;
+	}
+}*/
