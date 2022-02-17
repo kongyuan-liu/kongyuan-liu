@@ -1165,3 +1165,217 @@ void Unio(int a, int b) {
 		Fri[a_] = b_;
 	}
 }*/
+//L2-001 紧急救援
+/*#include<stdio.h>
+#define Max 510
+void Dijkstra();
+void Print(int t);
+const int INF = 1e9 + 7;
+int n, m, s, d;
+int i, j;
+int a, b, c;
+int close[Max] = { 0 }, open[Max] = { 0 };
+int gra[Max][Max] = { 0 };//存放路徑長度
+int people[Max] = { 0 };//記錄城市救援隊的數目
+int dis[Max] = { 0 };//記錄每個城市到起點的最短距離
+int way[Max] = { 0 };//記錄前驅節點
+int cnt[Max] = { 0 };//記錄從起點到其他節點的最短路徑數目
+int num[Max] = { 0 };//記錄從起點到其他節點召集的救援隊最大總數
+int main()
+{
+	scanf("%d %d %d %d", &n, &m, &s, &d);
+	for (i = 0; i < n; i++) {
+		scanf("%d", &people[i]);
+	}
+	for (i = 0; i < n; i++) {
+		for (j = 0; j < n; j++) {
+			if (i != j)
+				gra[i][j] = INF;
+			else
+				gra[i][j] = 0;
+		}
+	}
+	for (i = 0; i < m; i++) {
+		scanf("%d %d %d", &a, &b, &c);
+		gra[a][b] = c;//將有聯係的兩個城市間的道路長度記錄下來
+		gra[b][a] = c;
+	}
+	Dijkstra();
+
+	printf("%d %d\n", cnt[d], num[d]);
+	Print(d);
+	return 0;
+}
+void Dijkstra() {
+	dis[s] = 0;
+	num[s] = people[s];
+	cnt[s] = 1;
+	way[s] = s;
+	for (i = 0; i < n; i++) {
+		dis[i] = gra[s][i];
+	}
+	for (i = 0; i < n; i++) {
+		int min_dis = INF;//記錄起點到其他未標記節點的最小距離
+		int mid = -1;//記錄最短距離節點的編號
+		//遍历n个顶点，寻找当前未被访问的顶点中的距离起始顶点最短距离的节点编号
+		for (j = 0; j < n; j++) {
+			if (open[j] == 0 && min_dis > dis[j]) {
+				min_dis = dis[j];
+				mid = j;
+			}
+		}
+		if (mid == -1)
+			break;
+		open[mid] = 1;
+		// 以mid为中间节点，再循环遍历其他所有节点
+		for (j = 0; j < n; j++) {
+			// 如果当前遍历的节点j未曾作为过中间节点
+			// 并且从起始节点到j的距离dis[j]大于从起始节点到mid与从mid到j的距离之和
+			if (open[j] == 0 && dis[j] > (dis[mid] + gra[mid][j])) {
+				dis[j] = dis[mid] + gra[mid][j];
+				cnt[j] = cnt[mid];
+				num[j] = people[j] + num[mid];
+				way[j] = mid;
+			}
+			// 如果当前遍历的节点j未曾作为过中间节点
+			// 并且从起始节点到j的距离dis[j]等于从起始节点到mid与从mid到j的距离之和
+			else if (open[j] == 0 && dis[j] == (dis[mid] + gra[mid][j])) {
+				cnt[j] += cnt[mid];
+				if (num[j] < num[mid] + people[j]) {
+					num[j] = num[mid] + people[j];
+					way[j] = mid;
+				}
+			}
+		}
+	}
+}
+void Print(int t) {
+	if (way[t] != t) {
+		Print(way[t]);
+		printf(" ");
+	}
+	printf("%d", t);
+	return;
+}*/
+/*#include<stdio.h>
+#define max 510
+void Dijkstra();
+void Print(int t);
+int n, m, s, d;
+int a, b, c;
+int i, j;
+const int INF = 1e9;
+int open[max] = { 0 };
+int gra[max][max] = { 0 };
+int people[max];//每個點的人數
+int num[max];//到此節點的總人數
+int cnt[max];//到此節點的路徑數
+int dis[max];//當前節點到起點的距離
+int way[max];//記錄前驅節點
+int main()
+{
+	scanf("%d %d %d %d", &n, &m, &s, &d);
+	for (i = 0; i < n; i++) {
+		scanf("%d", &people[i]);
+	}
+	for (i = 0; i < n; i++) {
+		for (j = 0; j < n; j++) {
+			if (i != j)
+				gra[i][j] = INF;
+		}
+	}
+	for (i = 0; i < m; i++) {
+		scanf("%d %d %d", &a, &b, &c);
+		gra[a][b] = c;
+		gra[b][a] = c;
+	}
+	Dijkstra();
+	printf("%d %d\n",cnt[d],num[d]);
+	Print(d);
+}
+void Dijkstra() {
+	dis[s] = 0;
+	cnt[s] = 1;
+	num[s] = people[s];
+	way[s] = s;
+	for (i = 0; i < n; i++) {
+		dis[i] = gra[s][i];
+	}
+	for (i = 0; i < n; i++) {
+		int min_dis = INF;//記錄最短距離
+		int mid = -1;//記錄最短距離節點編號
+		for (j = 0; j < n; j++) {
+			if (open[j]==0&&min_dis > dis[j]) {
+				min_dis = dis[j];
+				mid = j;
+			}
+		}
+		if (mid == -1)
+			break;
+		open[mid] = 1;
+		for (j = 0; j < n; j++) {
+			if (open[j] == 0 && dis[j] > (dis[mid] + gra[mid][j])) {
+				dis[j] = dis[mid] + gra[mid][j];
+				cnt[j] = cnt[mid];
+				num[j] = num[mid] + people[j];
+				way[j] = mid;
+			}
+			else if (open[j] == 0 && dis[j] == (dis[mid] + gra[mid][j])) {
+				cnt[j] = cnt[mid] + cnt[j];
+				if (num[j] < num[mid] + people[j]) {
+					num[j] = num[mid] + people[j];
+					way[j] = mid;
+				}
+			}
+		}
+	}
+}
+void Print(int t) {
+	if (way[t] != t) {
+		Print(way[t]);
+		printf(" ");
+	}
+	printf("%d", t);
+	return;
+}*/
+//L2-002 链表去重
+/*#include<stdio.h>
+#include<math.h>
+#define max 1000
+int data[max], loc[max];
+int a[max], b[max];
+int a_cnt = 0, b_cnt = 0;
+int cnt[max] = { 0 };
+int main()
+{
+	int add, n;
+	scanf("%d %d", &add, &n);
+	int i, j;
+	int t, k;
+	for (i = 0; i < n; i++) {
+		scanf("%d",&t);
+		scanf("%d %d", &data[t], &loc[t]);
+	}
+	k = add;
+	while (k != -1) {
+		t = abs(data[k]);
+		if (cnt[t] == 0) {
+			cnt[t] = 1;
+			a[a_cnt++] = k;
+		}
+		else {
+			b[b_cnt++] = k;
+		}
+		k = loc[k];
+	}
+	for (i = 0; i < a_cnt - 1; i++) {
+		printf("%05d %d %05d\n", a[i], data[a[i]], a[i + 1]);
+	}printf("%05d %d -1\n", a[a_cnt-1], data[a[a_cnt-1]]);
+	if (b_cnt) {
+		for (i = 0; i < b_cnt - 1; i++) {
+			printf("%05d %d %05d\n", b[i], data[b[i]], b[i + 1]);
+		}printf("%05d %d -1\n", b[b_cnt - 1], data[b[b_cnt - 1]]);
+	}
+	return 0;
+}*/
+
