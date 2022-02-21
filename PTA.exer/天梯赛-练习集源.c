@@ -1378,4 +1378,178 @@ int main()
 	}
 	return 0;
 }*/
-
+//L1-039 古风排版
+/*#include<stdio.h>
+#include<string.h>
+#define max 1005
+int n;
+int i;
+char gra[max][max] = { 0 };
+int main() 
+{
+	scanf("%d", &n);
+	getchar();//清空緩存
+	char arr[max] = { 0 };
+	gets(arr);
+	int len = strlen(arr);
+	int lkl = 0;
+	int cnt = 0;
+	int temp;//列數
+	if (len % n == 0)
+		temp = len / n;
+	else {
+		temp = len / n + 1;
+	}
+	int i, j;
+	for (j = 0; j < temp; j++) {
+		for (i = 0; i < n; i++) {
+			if (lkl == len) {
+				break;
+			}
+			gra[i][j] = arr[lkl++];
+		}
+		if (lkl == len) {
+			cnt = i - 1;
+			break;
+		}
+	}
+	for (i = 0; i < n; i++) {
+		for (j =temp-1; j >=0; j--) {
+			if (gra[i][j] != NULL) {
+				printf("%c", gra[i][j]);
+			}
+			else
+				printf(" ");
+		}
+		printf("\n");
+	}
+}*/
+//L1-046 整除光棍
+/*#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int x;
+	scanf("%d", &x);
+	int cnt = 0;
+	int s = 0, num = 0;
+	int i;
+	while (num < x) {
+		num =num* 10 + 1;
+		cnt++;
+	}
+	for (i = cnt;; i++) {
+		printf("%d", num / x);
+		if (num % x == 0) {
+			break;
+		}
+		num = num % x;
+		num = num * 10 + 1;
+	}
+	printf(" %d", i);
+}*/
+//L1-048 矩阵A乘以B
+/*#include<stdio.h>
+int a[50][50], b[50][50], c[50][50];
+int i, j, l;
+int main()
+{
+	int Ra, Rb, Ca, Cb;
+	scanf("%d %d", &Ra, &Ca);
+	for (i = 0; i < Ra; i++) {
+		for (j = 0; j < Ca; j++) {
+			scanf("%d", &a[i][j]);
+		}
+	}
+	scanf("%d %d", &Rb, &Cb);
+	for (i = 0; i < Rb; i++) {
+		for (j = 0; j < Cb; j++) {
+			scanf("%d", &b[i][j]);
+		}
+	}
+	if (Ca != Rb) {
+		printf("Error: %d != %d", Ca, Rb);
+		return 0;
+	}
+	printf("%d %d\n", Ra, Cb);
+	for (i = 0; i < Ra; i++) {
+		for (j = 0; j < Cb; j++) {
+			int num = 0;
+			for (l = 0; l < Ca; l++) {
+				num += a[i][l] * b[l][j];
+			}
+			c[i][j] = num;
+			printf("%d", c[i][j]);
+			if (j != Cb - 1)
+				printf(" ");
+		}
+		printf("\n");
+	}
+}*/
+//L1-071 前世档案
+/*#include<stdio.h>
+#include<string.h>
+#include<math.h>
+int n, m;
+int i, j;
+char arr[35] = { 0 };
+int main()
+{
+	scanf("%d %d", &n, &m);
+	int max = pow(2, n);//記錄最大節點的值
+	for (i = 0; i < m; i++) {
+		scanf("%s", arr);
+		int index = 1;//每次記得刷新
+		int k = max;
+		for (j = 0; j < n; j++) {
+			if (arr[j] == 'n') {
+				index += (k / 2);
+			}
+			k /= 2;//每判斷一次，節點數少一半
+		}
+		printf("%d\n", index);
+	}
+	return 0;
+}*/
+//L1-072 刮刮彩票
+/*#include<stdio.h>
+int gra[3][3] = { 0 };
+int i, j, l;
+int num = 0;//記錄0是哪個數字
+int in, jn;//標記0
+int money[25] = { 0,0,0,0,0,0,10000,36,720,360,80,252,108,72,54,180,72,180,119,36,306,1080,144,1800,3600 };
+int main() 
+{
+	int order = 0;
+	int mi;//記錄和
+	for (i = 0; i < 3; i++) {
+		for (j = 0; j < 3; j++) {
+			scanf("%d", &gra[i][j]);
+			if (gra[i][j] == 0) {
+				in = i;
+				jn = j;
+			}
+			num += gra[i][j];
+		}
+	}
+	num = 45 - num;
+	gra[in][jn] = num;
+	for (l = 0; l < 3; l++) {
+		scanf("%d %d", &i, &j);
+		printf("%d\n", gra[i - 1][j - 1]);
+	}
+	scanf("%d", &order);
+	if (order <= 3) {//輸入行
+		mi = gra[order - 1][0] + gra[order - 1][1] + gra[order - 1][2];
+	}
+	else if (order <= 6) {//輸入列
+		mi = gra[0][order - 1] + gra[1][order - 1] + gra[2][order - 1];
+	}
+	else if(order==7){//斜著輸入
+		mi = gra[0][0] + gra[1][1] + gra[2][2];
+	}
+	else {
+		mi = gra[0][2] + gra[1][1] + gra[2][0];
+	}
+	printf("%d", money[mi]);
+}*/
