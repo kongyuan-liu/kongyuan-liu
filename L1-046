@@ -1,0 +1,23 @@
+/*#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int x;
+	scanf("%d", &x);
+	int cnt = 0;
+	int s = 0, num = 0;
+	int i;
+	while (num < x) {
+		num =num* 10 + 1;
+		cnt++;
+	}
+	for (i = cnt;; i++) {
+		printf("%d", num / x);
+		if (num % x == 0) {
+			break;
+		}
+		num = num % x;
+		num = num * 10 + 1;
+	}
+	printf(" %d", i);
+}*/

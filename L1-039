@@ -1,0 +1,45 @@
+/*#include<stdio.h>
+#include<string.h>
+#define max 1005
+int n;
+int i;
+char gra[max][max] = { 0 };
+int main() 
+{
+	scanf("%d", &n);
+	getchar();//清空緩存
+	char arr[max] = { 0 };
+	gets(arr);
+	int len = strlen(arr);
+	int lkl = 0;
+	int cnt = 0;
+	int temp;//列數
+	if (len % n == 0)
+		temp = len / n;
+	else {
+		temp = len / n + 1;
+	}
+	int i, j;
+	for (j = 0; j < temp; j++) {
+		for (i = 0; i < n; i++) {
+			if (lkl == len) {
+				break;
+			}
+			gra[i][j] = arr[lkl++];
+		}
+		if (lkl == len) {
+			cnt = i - 1;
+			break;
+		}
+	}
+	for (i = 0; i < n; i++) {
+		for (j =temp-1; j >=0; j--) {
+			if (gra[i][j] != NULL) {
+				printf("%c", gra[i][j]);
+			}
+			else
+				printf(" ");
+		}
+		printf("\n");
+	}
+}*/

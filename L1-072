@@ -1,0 +1,41 @@
+/*#include<stdio.h>
+int gra[3][3] = { 0 };
+int i, j, l;
+int num = 0;//記錄0是哪個數字
+int in, jn;//標記0
+int money[25] = { 0,0,0,0,0,0,10000,36,720,360,80,252,108,72,54,180,72,180,119,36,306,1080,144,1800,3600 };
+int main() 
+{
+	int order = 0;
+	int mi;//記錄和
+	for (i = 0; i < 3; i++) {
+		for (j = 0; j < 3; j++) {
+			scanf("%d", &gra[i][j]);
+			if (gra[i][j] == 0) {
+				in = i;
+				jn = j;
+			}
+			num += gra[i][j];
+		}
+	}
+	num = 45 - num;
+	gra[in][jn] = num;
+	for (l = 0; l < 3; l++) {
+		scanf("%d %d", &i, &j);
+		printf("%d\n", gra[i - 1][j - 1]);
+	}
+	scanf("%d", &order);
+	if (order <= 3) {//輸入行
+		mi = gra[order - 1][0] + gra[order - 1][1] + gra[order - 1][2];
+	}
+	else if (order <= 6) {//輸入列
+		mi = gra[0][order - 1] + gra[1][order - 1] + gra[2][order - 1];
+	}
+	else if(order==7){//斜著輸入
+		mi = gra[0][0] + gra[1][1] + gra[2][2];
+	}
+	else {
+		mi = gra[0][2] + gra[1][1] + gra[2][0];
+	}
+	printf("%d", money[mi]);
+}*/

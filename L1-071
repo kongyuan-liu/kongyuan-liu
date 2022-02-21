@@ -1,0 +1,24 @@
+/*#include<stdio.h>
+#include<string.h>
+#include<math.h>
+int n, m;
+int i, j;
+char arr[35] = { 0 };
+int main()
+{
+	scanf("%d %d", &n, &m);
+	int max = pow(2, n);//記錄最大節點的值
+	for (i = 0; i < m; i++) {
+		scanf("%s", arr);
+		int index = 1;//每次記得刷新
+		int k = max;
+		for (j = 0; j < n; j++) {
+			if (arr[j] == 'n') {
+				index += (k / 2);
+			}
+			k /= 2;//每判斷一次，節點數少一半
+		}
+		printf("%d\n", index);
+	}
+	return 0;
+}*/

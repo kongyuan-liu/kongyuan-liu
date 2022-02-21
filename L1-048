@@ -1,0 +1,37 @@
+/*#include<stdio.h>
+int a[50][50], b[50][50], c[50][50];
+int i, j, l;
+int main()
+{
+	int Ra, Rb, Ca, Cb;
+	scanf("%d %d", &Ra, &Ca);
+	for (i = 0; i < Ra; i++) {
+		for (j = 0; j < Ca; j++) {
+			scanf("%d", &a[i][j]);
+		}
+	}
+	scanf("%d %d", &Rb, &Cb);
+	for (i = 0; i < Rb; i++) {
+		for (j = 0; j < Cb; j++) {
+			scanf("%d", &b[i][j]);
+		}
+	}
+	if (Ca != Rb) {
+		printf("Error: %d != %d", Ca, Rb);
+		return 0;
+	}
+	printf("%d %d\n", Ra, Cb);
+	for (i = 0; i < Ra; i++) {
+		for (j = 0; j < Cb; j++) {
+			int num = 0;
+			for (l = 0; l < Ca; l++) {
+				num += a[i][l] * b[l][j];
+			}
+			c[i][j] = num;
+			printf("%d", c[i][j]);
+			if (j != Cb - 1)
+				printf(" ");
+		}
+		printf("\n");
+	}
+}*/
