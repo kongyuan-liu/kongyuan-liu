@@ -1,6 +1,6 @@
-#define _CRT_SECURE_NO_WARNINGS//¼ÓÔÚÔ´ÎÄ¼şµÚÒ»ĞĞ
-//ÍÅÌå³ÌĞòÉè¼ÆÌìÌİÈü-Á·Ï°¼¯
-//Ò».L1-005 ¿¼ÊÔ×ùÎ»ºÅ
+ï»¿#define _CRT_SECURE_NO_WARNINGS//åŠ åœ¨æºæ–‡ä»¶ç¬¬ä¸€è¡Œ
+//å›¢ä½“ç¨‹åºè®¾è®¡å¤©æ¢¯èµ›-ç»ƒä¹ é›†
+//ä¸€.L1-005 è€ƒè¯•åº§ä½å·
 /*#include<stdio.h>
 typedef struct stu
 {
@@ -35,7 +35,7 @@ int main()
 	}
 	return 0;
 }*/
-//L1-007 ÄîÊı×Ö
+//L1-007 å¿µæ•°å­—
 /*#include<stdio.h>
 #include<string.h>
 int main()
@@ -112,7 +112,7 @@ int main()
 	num = pow(2, n);
 	printf("%g", floor(num));
 }*/
-//L1-016 ²éÑéÉí·İÖ¤
+//L1-016 æŸ¥éªŒèº«ä»½è¯
 /*#include<stdio.h>
 int main()
 {
@@ -139,7 +139,7 @@ int main()
 	if (flag == 0)
 		printf("All passed");
 }*/
-//L1-017 µ½µ×ÓĞ¶à¶ş
+//L1-017 åˆ°åº•æœ‰å¤šäºŒ
 /*#include<stdio.h>
 #include<string.h>
 int main()
@@ -205,7 +205,7 @@ int main()
 		}
 	}
 }*/
-//L1-020 Ë§µ½Ã»ÅóÓÑ
+//L1-020 å¸…åˆ°æ²¡æœ‹å‹
 /*#include<stdio.h>
 int main()
 {
@@ -244,7 +244,7 @@ int main()
 		printf("No one is handsome");
 	}
 }*/
-//L1-023 Êä³öGPLT
+//L1-023 è¾“å‡ºGPLT
 /*#include<stdio.h>
 int main()
 {
@@ -280,7 +280,7 @@ int main()
 	}
 	return 0;
 }*/
-//L1-025 ÕıÕûÊıA+B
+//L1-025 æ­£æ•´æ•°A+B
 /*#include<stdio.h>
 #include<string.h>
 int main()
@@ -333,7 +333,7 @@ int main()
 		printf("? + ? = ?");
 	return 0;
 }*/
-//L1-026 (Ö¸Õë¼Ó¼õ·¨Ôò)
+//L1-026 (æŒ‡é’ˆåŠ å‡æ³•åˆ™)
 /*#include<stdio.h>
 int main()
 {
@@ -345,7 +345,7 @@ int main()
 		p++;
 	}
 }*/
-//L1-027 ³ö×â
+//L1-027 å‡ºç§Ÿ
 /*#include<stdio.h>
 int main()
 {
@@ -360,7 +360,7 @@ int main()
 		num[i] = a[i] - '0';
 		NUM[i] = a[i] - '0';
 	}
-	for (i = 0; i < 11; i++)//½«ºÅÂëÓÉ´óµ½Ğ¡ÅÅĞò
+	for (i = 0; i < 11; i++)//å°†å·ç ç”±å¤§åˆ°å°æ’åº
 	{
 		for (j = 10; j >=1; j--)
 		{
@@ -380,10 +380,10 @@ int main()
 		if (num[j] != num[j + 1])
 		{
 			arr[i++] = num[j];
-			k++;//¼ÇÂ¼arrÊı×éÖĞÔªËØµÄ¸öÊı
+			k++;//è®°å½•arræ•°ç»„ä¸­å…ƒç´ çš„ä¸ªæ•°
 		}
 	}
-	arr[k] = num[10];//¼ÇÂ¼ÅÅĞòºóºÅÂëµÄ×îºóÒ»¸öÊı£¬µÃµ½ÍêÕûµÄarrÊı×é
+	arr[k] = num[10];//è®°å½•æ’åºåå·ç çš„æœ€åä¸€ä¸ªæ•°ï¼Œå¾—åˆ°å®Œæ•´çš„arræ•°ç»„
 	k++;
 	for (i = 0; i < 11; i++)
 	{
@@ -391,7 +391,7 @@ int main()
 		{
 			if (arr[j] == NUM[i])
 			{
-				index[i] = j;//¼ÇÂ¼indexÊı×éÖĞµÄÔªËØ
+				index[i] = j;//è®°å½•indexæ•°ç»„ä¸­çš„å…ƒç´ 
 			}
 		}
 	}
@@ -409,7 +409,7 @@ int main()
 	}   printf("};\n");
 	return 0;
 }*/
-// Ò»°ïÒ»(½á¹¹ÌåÊı×éµÄÔËÓÃ)
+// ä¸€å¸®ä¸€(ç»“æ„ä½“æ•°ç»„çš„è¿ç”¨)
 /*#include<stdio.h>
 typedef struct stu
 {
@@ -442,7 +442,7 @@ int main()
 int main()
 {
 	int n; char a;
-	scanf("%d %c\n", &n, &a);//"\n"ÊÇÖØµã
+	scanf("%d %c\n", &n, &a);//"\n"æ˜¯é‡ç‚¹
 	int i, len = 0, k = 0;
 	char arr[100005] = { 0 };
 	gets(arr);
@@ -459,7 +459,7 @@ int main()
 			printf("%c", arr[i]);
 	}
 }*/
-//L1-033 ³öÉúÄê
+//L1-033 å‡ºç”Ÿå¹´
 /*#include<stdio.h>
 int func(int y);
 int main()
@@ -486,7 +486,7 @@ int func(int y)
 	}
 	return res;
 }*/
-//L1-034 µãÔŞ
+//L1-034 ç‚¹èµ
 /*#include<stdio.h>
 int main()
 {
@@ -511,7 +511,7 @@ int main()
 	printf("%d %d", dex, max);
 	return 0;
 }*/
-//L1-040 ×î¼ÑÇéÂÂÉí¸ß²î
+//L1-040 æœ€ä½³æƒ…ä¾£èº«é«˜å·®
 /*#include<stdio.h>
 int main() {
 	int n;
@@ -519,7 +519,7 @@ int main() {
 	int i;
 	char sex; double h, hi;
 	while (n--) {
-		scanf(" %c ", &sex);//¿Õ¸ñÊÇ¸ö¿Ó
+		scanf(" %c ", &sex);//ç©ºæ ¼æ˜¯ä¸ªå‘
 		scanf("%lf", &h);
 		if (sex == 'F')
 			hi = h * 1.09;
@@ -528,7 +528,7 @@ int main() {
 		printf("%.2lf\n", hi);
 	}
 }*/
-//L1-043 ÔÄÀÀÊÒ
+//L1-043 é˜…è§ˆå®¤
 /*#include<stdio.h>
 #include<math.h>
 typedef struct infor
@@ -571,7 +571,7 @@ int main()
 			s[i].num = 0;
 	}
 }*/
-//L1-044 ÎÈÓ®
+//L1-044 ç¨³èµ¢
 /*#include<stdio.h>
 #include<string.h>
 int main() {
@@ -598,7 +598,7 @@ int main() {
 		else printf("%s\n", a);
 	}
 }*/
-//************************L1-049 ÌìÌİÈü×ùÎ»·ÖÅä
+//************************L1-049 å¤©æ¢¯èµ›åº§ä½åˆ†é…
 /*#include<stdio.h>
 #include<string.h>
 int main()
@@ -609,7 +609,7 @@ int main()
 	int n; scanf("%d", &n);
 	int countmax = 0;
 	for (i = 0; i < n; i++) {
-		scanf("%d", &m[i]);//¼ÇÂ¼Ã¿¸öÑ§Ğ£µÄ¶ÓÎéÊı
+		scanf("%d", &m[i]);//è®°å½•æ¯ä¸ªå­¦æ ¡çš„é˜Ÿä¼æ•°
 		if (m[i] > countmax) {
 			countmax = m[i];
 		}
@@ -643,7 +643,7 @@ int main()
 	}
 	return 0;
 }*/
-//L1-050 µ¹ÊıµÚN¸ö×Ö·û´®
+//L1-050 å€’æ•°ç¬¬Nä¸ªå­—ç¬¦ä¸²
 /*#include<stdio.h>
 #include<math.h>
 int main()
@@ -659,12 +659,12 @@ int main()
 	}
 	return 0;
 }*/
-//L1-056 ²ÂÊı×Ö
+//L1-056 çŒœæ•°å­—
 /*#include<stdio.h>
 #include<math.h>
 typedef struct STU
 {
-	char arr[10];//”µ½M±MÁ¿é_´óÒ»Ğ©£¬·ñ„t×îááÒ»‚€üc²»ß^
+	char arr[10];//æ•¸çµ„ç›¡é‡é–‹å¤§ä¸€äº›ï¼Œå¦å‰‡æœ€å¾Œä¸€å€‹é»ä¸é
 	int num;
 }stu;
 int main()
@@ -679,17 +679,17 @@ int main()
 	}
 	double	ave = sum / (n * 2.0);
 	double mincount = fabs(ave - s1[0].num);
-	t = s1[0];//³õÊ¼»¯ºÜÖØÒª£¬·ñ„tµ½µÚÈı‚€ücŸo·¨Í¨ß^
+	t = s1[0];//åˆå§‹åŒ–å¾ˆé‡è¦ï¼Œå¦å‰‡åˆ°ç¬¬ä¸‰å€‹é»ç„¡æ³•é€šé
 	for (i = 0; i < n; i++) {
 		if (mincount > fabs(ave-s1[i].num)) {
-			mincount = fabs(ave-s1[i].num);//½^Œ¦Öµº¯”µ
+			mincount = fabs(ave-s1[i].num);//çµ•å°å€¼å‡½æ•¸
 			t = s1[i];
 		}
 	}
-	printf("%g %s", floor(ave), t.arr);//È¡Õûº¯”µ<math.h>
+	printf("%g %s", floor(ave), t.arr);//å–æ•´å‡½æ•¸<math.h>
 	return 0;
 }*/
-//L1-058 6·­ÁË
+//L1-058 6ç¿»äº†
 /*#include<stdio.h>
 #include<string.h>
 int main()
@@ -698,8 +698,8 @@ int main()
 	gets(arr);
 	int len = strlen(arr), i, j;
 	int count = 0;
-	for (i = 0; i <= len; i++)//Èç¹û×Ö·û´®Ä©Î²ÊÇÒ»´®ßBÀmÇÒ·ûºÏî}ÒâµÄ'6'£¬„tÊ²÷áÒ²²»´òÓ¡£¬ËùÒÔ±Øíš¶àÒ»´ÎÑ­­h
-	{//¿ÉÒÔË¼¿¼Ò»ÏÂ ‘Ê²÷áÒªÏÈİ”³ö”µ×Ö×Ö·û£¬¶ø·Ç·Ç”µ×Ö×Ö·û
+	for (i = 0; i <= len; i++)//å¦‚æœå­—ç¬¦ä¸²æœ«å°¾æ˜¯ä¸€ä¸²é€£çºŒä¸”ç¬¦åˆé¡Œæ„çš„'6'ï¼Œå‰‡ä»€éº½ä¹Ÿä¸æ‰“å°ï¼Œæ‰€ä»¥å¿…é ˆå¤šä¸€æ¬¡å¾ªç’°
+	{//å¯ä»¥æ€è€ƒä¸€ä¸‹çˆ²ä»€éº½è¦å…ˆè¼¸å‡ºæ•¸å­—å­—ç¬¦ï¼Œè€Œééæ•¸å­—å­—ç¬¦
 		if (arr[i] != '6') {
 			if (count > 0 && count <= 3) {
 				for (j = 0; j < count; j++) {
@@ -712,7 +712,7 @@ int main()
 			else if (count > 9)
 				printf("27");
 			printf("%c", arr[i]);
-			count = 0;//Ó›µÃ³õÊ¼»¯
+			count = 0;//è¨˜å¾—åˆå§‹åŒ–
 		}
 		else {
 			count++;
@@ -720,7 +720,7 @@ int main()
 	}
 	return 0;
 }*/
-//L1-059 ÇÃ±¿ÖÓ
+//L1-059 æ•²ç¬¨é’Ÿ
 /*#include<stdio.h>
 #include<string.h>
 int Judge(char* a, int i);
@@ -730,10 +730,10 @@ int main()
 	int n; scanf("%d", &n);
 	int i, j;
 	int len, flag = 0;
-	getchar();//ÓÃì¶Çå¿Õ¾Ğn…^µÄ'\n'
+	getchar();//ç”¨æ–¼æ¸…ç©ºç·©è¡å€çš„'\n'
 	for (i = 0; i < n; i++) {
 		char arr[105] = { 0 };
-		gets(arr);//gets()±¾ÊÂ×xµ½'\n'Í£Ö¹£¬ÒÔ'\0'½YÎ²£¬µ«'\n'²»•şßzÁôÔÚ¾´æ…^£¨scanf•ş£©
+		gets(arr);//gets()æœ¬äº‹è®€åˆ°'\n'åœæ­¢ï¼Œä»¥'\0'çµå°¾ï¼Œä½†'\n'ä¸æœƒéºç•™åœ¨ç·©å­˜å€ï¼ˆscanfæœƒï¼‰
 		len = strlen(arr);
 		for (j = 0; j < len; j++) {
 			if (arr[j] == ',') {
@@ -780,7 +780,7 @@ void Printf(char* a, int i)
 			//	a[++j] = ter[k];
 			//}
 			//printf("%s\n", a);
-			//return 0; //ÈôááÈı‚€Ô~µÄéL¶È´óì¶ter”µ½MµÄéL¶È£¬„tŸo·¨ÍêÈ«¸²Éw
+			//return 0; //è‹¥å¾Œä¸‰å€‹è©çš„é•·åº¦å¤§æ–¼teræ•¸çµ„çš„é•·åº¦ï¼Œå‰‡ç„¡æ³•å®Œå…¨è¦†è“‹
 			k = j;
 			break;
 		}
@@ -790,7 +790,7 @@ void Printf(char* a, int i)
 	}
 	printf("%s\n", ter);
 }*/
-//L1 - 075 Ç¿ÆÈÖ¢
+//L1 - 075 å¼ºè¿«ç—‡
 /*#include<string.h>
 #include<stdio.h>
 int main()
@@ -819,14 +819,14 @@ int main()
 		printf("%c", a[i]);
 	}
 }*/
-//L1-078 ¼ªÀÏÊ¦µÄ»Ø¹é
+//L1-078 å‰è€å¸ˆçš„å›å½’
 /*#include<stdio.h>
 #include<string.h>
 int main()
 {
 
 	int n, m; scanf("%d %d", &n, &m);
-	getchar();//Çå¿Õ¾´æ…^µÄ'/n'
+	getchar();//æ¸…ç©ºç·©å­˜å€çš„'/n'
 	int i, count = 0, k = 0;
 	char* ret1, * ret2;
 	char a[90] = { 0 };
@@ -834,13 +834,13 @@ int main()
 	for (i = 0; i < n; i++) {
 		char arr[90] = { 0 };
 		gets(arr);
-		ret1 = strstr(arr, s1);//´Ëº¯”µÓÃí²éÕÒs1ÔÚarrÖĞ³ö¬FµÄÎ»ÖÃ£¬·µ»ØÖµéµØÖ·£¬Î´ÕÒµ½„t·µ»ØNULL
+		ret1 = strstr(arr, s1);//æ­¤å‡½æ•¸ç”¨ä¾†æŸ¥æ‰¾s1åœ¨arrä¸­å‡ºç¾çš„ä½ç½®ï¼Œè¿”å›å€¼ç‚ºåœ°å€ï¼Œæœªæ‰¾åˆ°å‰‡è¿”å›NULL
 		ret2 = strstr(arr, s2);
 		if (ret1 == NULL && ret2 == NULL) {
 			if (k == m) {
-				strcpy(a, arr);//Ñ}Ñu”µ½Marr
+				strcpy(a, arr);//è¤‡è£½æ•¸çµ„arr
 			}
-			count++;//Ô“×öµÄî}µÄ‚€”µ
+			count++;//è©²åšçš„é¡Œçš„å€‹æ•¸
 		}
 		if (count == m)
 			k = count;
@@ -850,7 +850,7 @@ int main()
 	else
 		printf("%s", a);
 }*/
-//L1-002 ´òÓ¡É³Â©
+//L1-002 æ‰“å°æ²™æ¼
 /*#include<stdio.h>
 #include<math.h>
 int main()
@@ -859,7 +859,7 @@ int main()
 	scanf("%d %c", &n, &chara);
 	int i, diff = 0,j, num = 0;
 	num = (n + 1) / 2;
-	num = (int)sqrt(num);//ÉÏÈı½ÇŒÓ”µ,Õû‚€É³Â©‚€”µénum*num*2-1
+	num = (int)sqrt(num);//ä¸Šä¸‰è§’å±¤æ•¸,æ•´å€‹æ²™æ¼å€‹æ•¸ç‚ºnum*num*2-1
 	diff = n - (num * num * 2 - 1);
 	for (i = 0; i < num; i++) {
 		for (j = i; j > 0; j--) {
@@ -882,27 +882,27 @@ int main()
 	printf("%d", diff);
 	return 0;
 }*/
-//´òÓ¡É³Â©Éı¼‰°æ
-     //Ë¼Â·£ºÓĞÉÏÈı½ÇŒÓ”µŞDµ½Õû‚€ˆDĞÎµÄŒÓ”µŒ¦·Q
+//æ‰“å°æ²™æ¼å‡ç´šç‰ˆ
+     //æ€è·¯ï¼šæœ‰ä¸Šä¸‰è§’å±¤æ•¸è½‰åˆ°æ•´å€‹åœ–å½¢çš„å±¤æ•¸å°ç¨±
   /*#include<stdio.h>
 #include<math.h>
 void print(char ch, int count) {
 	while (count-- > 0)putchar(ch);
-}	//print(ch,c)£º´òÓ¡ch×Ö·ûc±é¡£
+}	//print(ch,c)ï¼šæ‰“å°chå­—ç¬¦céã€‚
 int main() {
 	int n, ch, h, i;
 	scanf("%d %c", &n, &ch);
 	h = (int)sqrt((n + 1) / 2); //h=g(n)
-	for (i = 1 - h; i < h; i++) {//Œ¦·Q
+	for (i = 1 - h; i < h; i++) {//å°ç¨±
 		int j = abs(i);
-		print(' ', h - 1 - j);	//¿Õ¸ñ
+		print(' ', h - 1 - j);	//ç©ºæ ¼
 		print(ch, 2 * j + 1);	//ch
-		putchar('\n');	//»»ĞĞ
+		putchar('\n');	//æ¢è¡Œ
 	}
 	printf("%d", n - (2 * h * h - 1));
 	return 0;
 }*/
-//´òÓ¡ÁâĞÎ£¨Í¬ÉÏ£©
+//æ‰“å°è±å½¢ï¼ˆåŒä¸Šï¼‰
   /*#include<stdio.h>
 #include<math.h>
 void print(char ch, int cnt) {
@@ -922,7 +922,7 @@ int main()
 	printf("%d", n - h * h * 2 + 1);
 	return 0;
 }*/
-//L1-006 Á¬ĞøÒò×Ó
+//L1-006 è¿ç»­å› å­
 /*#include<stdio.h>
 #include<math.h>
 #include<stdlib.h>
@@ -967,10 +967,10 @@ int isPrime(int n)
 	}
 	return 1;
 }*/
-//L1-009 N¸öÊıÇóºÍ
+//L1-009 Nä¸ªæ•°æ±‚å’Œ
 /*#include<stdio.h>
 #include<math.h>
-int gcd(long int a, long int b);//È¡ƒÉ‚€”µ×î´ó¹«¼s”µ(İšŞDÏà³ı·¨)
+int gcd(long int a, long int b);//å–å…©å€‹æ•¸æœ€å¤§å…¬ç´„æ•¸(è¼¾è½‰ç›¸é™¤æ³•)
 int main()
 {
 	int n; scanf("%d", &n);
@@ -1004,7 +1004,7 @@ int gcd(long int a, long int b) {
 	int c = a % b;
 	return gcd(b, c);
 }*/
-//L1-079 ÌìÌİÈüµÄÉÆÁ¼
+//L1-079 å¤©æ¢¯èµ›çš„å–„è‰¯
 /*#include<stdio.h>
 #define N 10010*2
 int main()
@@ -1031,7 +1031,7 @@ int main()
 	printf("%d %d\n", min, cmin);
 	printf("%d %d\n", max, cmax);
 }*/
-//L1-080 ³Ë·¨¿Ú¾÷ÊıÁĞ
+//L1-080 ä¹˜æ³•å£è¯€æ•°åˆ—
 /*#include<stdio.h>
 int main()
 {
@@ -1056,18 +1056,18 @@ int main()
 		printf("%d", arr[i]);
 	}
 }*/
-//L2-003 ÔÂ±ı
+//L2-003 æœˆé¥¼
 /*#include<stdio.h>
 #include<stdlib.h>
 #define N 1111;
 typedef struct te {
-	double sum;//ì´æ
-	double price;//¿‚ƒr
-	double sale;//†Îƒr
+	double sum;//åº«å­˜
+	double price;//ç¸½åƒ¹
+	double sale;//å–®åƒ¹
 }Node;
 int n;
-double need;//ĞèÇó
-double p = 0;//ÊÕÒæ
+double need;//éœ€æ±‚
+double p = 0;//æ”¶ç›Š
 int main() 
 {
 	int i, j;
@@ -1103,7 +1103,7 @@ int main()
 	}
 	printf("%.2lf", p);
 }*/
-//L2-010 ÅÅ×ùÎ»-²é²¢¼¯
+//L2-010 æ’åº§ä½-æŸ¥å¹¶é›†
 /*#include<stdio.h>
 int Fri[105] = { 0 };
 int m1, m2, flag, i;
@@ -1165,7 +1165,7 @@ void Unio(int a, int b) {
 		Fri[a_] = b_;
 	}
 }*/
-//L2-001 ½ô¼±¾ÈÔ®
+//L2-001 ç´§æ€¥æ•‘æ´
 /*#include<stdio.h>
 #define Max 510
 void Dijkstra();
@@ -1175,12 +1175,12 @@ int n, m, s, d;
 int i, j;
 int a, b, c;
 int close[Max] = { 0 }, open[Max] = { 0 };
-int gra[Max][Max] = { 0 };//´æ·ÅÂ·½éL¶È
-int people[Max] = { 0 };//Ó›ä›³ÇÊĞ¾ÈÔ®ê µÄ”µÄ¿
-int dis[Max] = { 0 };//Ó›ä›Ã¿‚€³ÇÊĞµ½ÆğücµÄ×î¶Ì¾àëx
-int way[Max] = { 0 };//Ó›ä›Ç°òŒ¹üc
-int cnt[Max] = { 0 };//Ó›ä›ÄÆğücµ½ÆäËû¹ücµÄ×î¶ÌÂ·½”µÄ¿
-int num[Max] = { 0 };//Ó›ä›ÄÆğücµ½ÆäËû¹ücÕÙ¼¯µÄ¾ÈÔ®ê ×î´ó¿‚”µ
+int gra[Max][Max] = { 0 };//å­˜æ”¾è·¯å¾‘é•·åº¦
+int people[Max] = { 0 };//è¨˜éŒ„åŸå¸‚æ•‘æ´éšŠçš„æ•¸ç›®
+int dis[Max] = { 0 };//è¨˜éŒ„æ¯å€‹åŸå¸‚åˆ°èµ·é»çš„æœ€çŸ­è·é›¢
+int way[Max] = { 0 };//è¨˜éŒ„å‰é©…ç¯€é»
+int cnt[Max] = { 0 };//è¨˜éŒ„å¾èµ·é»åˆ°å…¶ä»–ç¯€é»çš„æœ€çŸ­è·¯å¾‘æ•¸ç›®
+int num[Max] = { 0 };//è¨˜éŒ„å¾èµ·é»åˆ°å…¶ä»–ç¯€é»å¬é›†çš„æ•‘æ´éšŠæœ€å¤§ç¸½æ•¸
 int main()
 {
 	scanf("%d %d %d %d", &n, &m, &s, &d);
@@ -1197,7 +1197,7 @@ int main()
 	}
 	for (i = 0; i < m; i++) {
 		scanf("%d %d %d", &a, &b, &c);
-		gra[a][b] = c;//Œ¢ÓĞÂ“‚SµÄƒÉ‚€³ÇÊĞégµÄµÀÂ·éL¶ÈÓ›ä›ÏÂí
+		gra[a][b] = c;//å°‡æœ‰è¯ä¿‚çš„å…©å€‹åŸå¸‚é–“çš„é“è·¯é•·åº¦è¨˜éŒ„ä¸‹ä¾†
 		gra[b][a] = c;
 	}
 	Dijkstra();
@@ -1215,9 +1215,9 @@ void Dijkstra() {
 		dis[i] = gra[s][i];
 	}
 	for (i = 0; i < n; i++) {
-		int min_dis = INF;//Ó›ä›Æğücµ½ÆäËûÎ´˜ËÓ›¹ücµÄ×îĞ¡¾àëx
-		int mid = -1;//Ó›ä›×î¶Ì¾àëx¹ücµÄ¾Ì–
-		//±éÀún¸ö¶¥µã£¬Ñ°ÕÒµ±Ç°Î´±»·ÃÎÊµÄ¶¥µãÖĞµÄ¾àÀëÆğÊ¼¶¥µã×î¶Ì¾àÀëµÄ½Úµã±àºÅ
+		int min_dis = INF;//è¨˜éŒ„èµ·é»åˆ°å…¶ä»–æœªæ¨™è¨˜ç¯€é»çš„æœ€å°è·é›¢
+		int mid = -1;//è¨˜éŒ„æœ€çŸ­è·é›¢ç¯€é»çš„ç·¨è™Ÿ
+		//éå†nä¸ªé¡¶ç‚¹ï¼Œå¯»æ‰¾å½“å‰æœªè¢«è®¿é—®çš„é¡¶ç‚¹ä¸­çš„è·ç¦»èµ·å§‹é¡¶ç‚¹æœ€çŸ­è·ç¦»çš„èŠ‚ç‚¹ç¼–å·
 		for (j = 0; j < n; j++) {
 			if (open[j] == 0 && min_dis > dis[j]) {
 				min_dis = dis[j];
@@ -1227,18 +1227,18 @@ void Dijkstra() {
 		if (mid == -1)
 			break;
 		open[mid] = 1;
-		// ÒÔmidÎªÖĞ¼ä½Úµã£¬ÔÙÑ­»·±éÀúÆäËûËùÓĞ½Úµã
+		// ä»¥midä¸ºä¸­é—´èŠ‚ç‚¹ï¼Œå†å¾ªç¯éå†å…¶ä»–æ‰€æœ‰èŠ‚ç‚¹
 		for (j = 0; j < n; j++) {
-			// Èç¹ûµ±Ç°±éÀúµÄ½ÚµãjÎ´Ôø×÷Îª¹ıÖĞ¼ä½Úµã
-			// ²¢ÇÒ´ÓÆğÊ¼½Úµãµ½jµÄ¾àÀëdis[j]´óÓÚ´ÓÆğÊ¼½Úµãµ½midÓë´Ómidµ½jµÄ¾àÀëÖ®ºÍ
+			// å¦‚æœå½“å‰éå†çš„èŠ‚ç‚¹jæœªæ›¾ä½œä¸ºè¿‡ä¸­é—´èŠ‚ç‚¹
+			// å¹¶ä¸”ä»èµ·å§‹èŠ‚ç‚¹åˆ°jçš„è·ç¦»dis[j]å¤§äºä»èµ·å§‹èŠ‚ç‚¹åˆ°midä¸ä»midåˆ°jçš„è·ç¦»ä¹‹å’Œ
 			if (open[j] == 0 && dis[j] > (dis[mid] + gra[mid][j])) {
 				dis[j] = dis[mid] + gra[mid][j];
 				cnt[j] = cnt[mid];
 				num[j] = people[j] + num[mid];
 				way[j] = mid;
 			}
-			// Èç¹ûµ±Ç°±éÀúµÄ½ÚµãjÎ´Ôø×÷Îª¹ıÖĞ¼ä½Úµã
-			// ²¢ÇÒ´ÓÆğÊ¼½Úµãµ½jµÄ¾àÀëdis[j]µÈÓÚ´ÓÆğÊ¼½Úµãµ½midÓë´Ómidµ½jµÄ¾àÀëÖ®ºÍ
+			// å¦‚æœå½“å‰éå†çš„èŠ‚ç‚¹jæœªæ›¾ä½œä¸ºè¿‡ä¸­é—´èŠ‚ç‚¹
+			// å¹¶ä¸”ä»èµ·å§‹èŠ‚ç‚¹åˆ°jçš„è·ç¦»dis[j]ç­‰äºä»èµ·å§‹èŠ‚ç‚¹åˆ°midä¸ä»midåˆ°jçš„è·ç¦»ä¹‹å’Œ
 			else if (open[j] == 0 && dis[j] == (dis[mid] + gra[mid][j])) {
 				cnt[j] += cnt[mid];
 				if (num[j] < num[mid] + people[j]) {
@@ -1267,11 +1267,11 @@ int i, j;
 const int INF = 1e9;
 int open[max] = { 0 };
 int gra[max][max] = { 0 };
-int people[max];//Ã¿‚€ücµÄÈË”µ
-int num[max];//µ½´Ë¹ücµÄ¿‚ÈË”µ
-int cnt[max];//µ½´Ë¹ücµÄÂ·½”µ
-int dis[max];//®”Ç°¹ücµ½ÆğücµÄ¾àëx
-int way[max];//Ó›ä›Ç°òŒ¹üc
+int people[max];//æ¯å€‹é»çš„äººæ•¸
+int num[max];//åˆ°æ­¤ç¯€é»çš„ç¸½äººæ•¸
+int cnt[max];//åˆ°æ­¤ç¯€é»çš„è·¯å¾‘æ•¸
+int dis[max];//ç•¶å‰ç¯€é»åˆ°èµ·é»çš„è·é›¢
+int way[max];//è¨˜éŒ„å‰é©…ç¯€é»
 int main()
 {
 	scanf("%d %d %d %d", &n, &m, &s, &d);
@@ -1302,8 +1302,8 @@ void Dijkstra() {
 		dis[i] = gra[s][i];
 	}
 	for (i = 0; i < n; i++) {
-		int min_dis = INF;//Ó›ä›×î¶Ì¾àëx
-		int mid = -1;//Ó›ä›×î¶Ì¾àëx¹üc¾Ì–
+		int min_dis = INF;//è¨˜éŒ„æœ€çŸ­è·é›¢
+		int mid = -1;//è¨˜éŒ„æœ€çŸ­è·é›¢ç¯€é»ç·¨è™Ÿ
 		for (j = 0; j < n; j++) {
 			if (open[j]==0&&min_dis > dis[j]) {
 				min_dis = dis[j];
@@ -1338,7 +1338,7 @@ void Print(int t) {
 	printf("%d", t);
 	return;
 }*/
-//L2-002 Á´±íÈ¥ÖØ
+//L2-002 é“¾è¡¨å»é‡
 /*#include<stdio.h>
 #include<math.h>
 #define max 1000
@@ -1378,7 +1378,7 @@ int main()
 	}
 	return 0;
 }*/
-//L1-039 ¹Å·çÅÅ°æ
+//L1-039 å¤é£æ’ç‰ˆ
 /*#include<stdio.h>
 #include<string.h>
 #define max 1005
@@ -1388,13 +1388,13 @@ char gra[max][max] = { 0 };
 int main() 
 {
 	scanf("%d", &n);
-	getchar();//Çå¿Õ¾´æ
+	getchar();//æ¸…ç©ºç·©å­˜
 	char arr[max] = { 0 };
 	gets(arr);
 	int len = strlen(arr);
 	int lkl = 0;
 	int cnt = 0;
-	int temp;//ÁĞ”µ
+	int temp;//åˆ—æ•¸
 	if (len % n == 0)
 		temp = len / n;
 	else {
@@ -1424,7 +1424,7 @@ int main()
 		printf("\n");
 	}
 }*/
-//L1-046 Õû³ı¹â¹÷
+//L1-046 æ•´é™¤å…‰æ£
 /*#include<stdio.h>
 #include<math.h>
 int main()
@@ -1448,7 +1448,7 @@ int main()
 	}
 	printf(" %d", i);
 }*/
-//L1-048 ¾ØÕóA³ËÒÔB
+//L1-048 çŸ©é˜µAä¹˜ä»¥B
 /*#include<stdio.h>
 int a[50][50], b[50][50], c[50][50];
 int i, j, l;
@@ -1486,7 +1486,7 @@ int main()
 		printf("\n");
 	}
 }*/
-//L1-071 Ç°ÊÀµµ°¸
+//L1-071 å‰ä¸–æ¡£æ¡ˆ
 /*#include<stdio.h>
 #include<string.h>
 #include<math.h>
@@ -1496,32 +1496,32 @@ char arr[35] = { 0 };
 int main()
 {
 	scanf("%d %d", &n, &m);
-	int max = pow(2, n);//Ó›ä›×î´ó¹ücµÄÖµ
+	int max = pow(2, n);//è¨˜éŒ„æœ€å¤§ç¯€é»çš„å€¼
 	for (i = 0; i < m; i++) {
 		scanf("%s", arr);
-		int index = 1;//Ã¿´ÎÓ›µÃË¢ĞÂ
+		int index = 1;//æ¯æ¬¡è¨˜å¾—åˆ·æ–°
 		int k = max;
 		for (j = 0; j < n; j++) {
 			if (arr[j] == 'n') {
 				index += (k / 2);
 			}
-			k /= 2;//Ã¿ÅĞ”àÒ»´Î£¬¹üc”µÉÙÒ»°ë
+			k /= 2;//æ¯åˆ¤æ–·ä¸€æ¬¡ï¼Œç¯€é»æ•¸å°‘ä¸€åŠ
 		}
 		printf("%d\n", index);
 	}
 	return 0;
 }*/
-//L1-072 ¹Î¹Î²ÊÆ±
+//L1-072 åˆ®åˆ®å½©ç¥¨
 /*#include<stdio.h>
 int gra[3][3] = { 0 };
 int i, j, l;
-int num = 0;//Ó›ä›0ÊÇÄÄ‚€”µ×Ö
-int in, jn;//˜ËÓ›0
+int num = 0;//è¨˜éŒ„0æ˜¯å“ªå€‹æ•¸å­—
+int in, jn;//æ¨™è¨˜0
 int money[25] = { 0,0,0,0,0,0,10000,36,720,360,80,252,108,72,54,180,72,180,119,36,306,1080,144,1800,3600 };
 int main() 
 {
 	int order = 0;
-	int mi;//Ó›ä›ºÍ
+	int mi;//è¨˜éŒ„å’Œ
 	for (i = 0; i < 3; i++) {
 		for (j = 0; j < 3; j++) {
 			scanf("%d", &gra[i][j]);
@@ -1539,17 +1539,130 @@ int main()
 		printf("%d\n", gra[i - 1][j - 1]);
 	}
 	scanf("%d", &order);
-	if (order <= 3) {//İ”ÈëĞĞ
+	if (order <= 3) {//è¼¸å…¥è¡Œ
 		mi = gra[order - 1][0] + gra[order - 1][1] + gra[order - 1][2];
 	}
-	else if (order <= 6) {//İ”ÈëÁĞ
+	else if (order <= 6) {//è¼¸å…¥åˆ—
 		mi = gra[0][order - 1] + gra[1][order - 1] + gra[2][order - 1];
 	}
-	else if(order==7){//Ğ±Öøİ”Èë
+	else if(order==7){//æ–œè‘—è¼¸å…¥
 		mi = gra[0][0] + gra[1][1] + gra[2][2];
 	}
 	else {
 		mi = gra[0][2] + gra[1][1] + gra[2][0];
 	}
 	printf("%d", money[mi]);
+}*/
+//L2-005 é›†åˆç›¸ä¼¼åº¦(âŒéŒ¯èª¤)
+/*
+#include<stdio.h>
+#include<string.h>
+#define max 10010
+int n, m;
+int i, j, l = 0;
+int len[max];//é¡Œç›®è¼¸å…¥
+int a, b;//é¡Œç›®è¼¸å…¥
+int gra[max][max];
+int lenmax = 0;
+int main() {
+	scanf("%d", &n);
+	for (i = 0; i < n; i++) {
+		scanf("%d", &len[i]);
+		for (j = 0; j < len[i]; j++) {
+			scanf("%d", &gra[i][j]);
+		}
+	}
+	scanf("%d", &m);
+	for (i = 0; i < m; i++) {
+		scanf("%d %d", &a, &b);
+		a--, b--;
+		int arr[max] = { 0 };
+		int isFlag[max] = { 0 };
+		double l = 0;//ç”¨ä¾†å­˜æ”¾å…©å€‹æ•¸çµ„ä¸­ä¸ç›¸ç­‰çš„æ•¸
+		double count = 0;//è¨˜éŒ„å…©å€‹æ•¸çµ„ä¸­éƒ½æœ‰çš„æ•¸
+		for (j = 0; j < len[a]; j++) {
+			isFlag[gra[a][j]] = 1;//å°‡å‡ºç¾åœ¨ç¬¬ä¸€å€‹æ•¸çµ„ä¸­çš„æ•¸åšæ¨™è¨˜
+			if (arr[gra[a][j]] == 0) {
+				arr[gra[a][j]] = 1;
+				l++;
+			}
+			//æ­¤è™•ä¸ç”¨elseå°±å¯é¿å…è¨˜éŒ„ç›¸åŒçš„æ•¸
+			//else if (arr[gra[a][j]] < 2) {
+			//	count++;
+			//	arr[gra[a][j]] = 2;
+			//}
+		}
+		for (j = 0; j < len[b]; j++) {
+			if (arr[gra[b][j]] == 0) {
+				arr[gra[b][j]] = 1;
+				l++;
+			}
+			else if (arr[gra[b][j]] < 2 && isFlag[gra[b][j]] == 1) {//è‹¥æ­¤è™•isFlag==0å‰‡èª¬æ˜ç¬¬ä¸€å€‹æ•¸çµ„ä¸­ç„¡æ­¤æ•¸ï¼Œå³ä¸æ˜¯å…©å€‹æ•¸çµ„å…±æœ‰çš„
+				count++;
+				arr[gra[b][j]] = 2;
+			}
+		}
+		printf("%.2lf",count/l*100);
+		printf("%%\n");
+	}
+	return 0;
+}*/
+//L2-009 æŠ¢çº¢åŒ…
+/*
+#include<stdio.h>
+#define max 10050
+typedef struct PEOPLE {
+	int num;//ç·¨è™Ÿ
+	double income;//æ”¶å…¥
+	int count;//æ¶åˆ°ç´…åŒ…å€‹æ•¸
+}peo;
+int main()
+{
+	peo s1[max] = { 0 };
+	int n; scanf("%d", &n);
+	int i, j;
+	for (i = 0; i < n; i++) {
+		s1[i].num = i + 1;
+		int m; scanf("%d", &m);//è¼¸å…¥ç™¼å‡ºç´…åŒ…å€‹æ•¸
+		for (j = 0; j < m; j++) {
+			int a, b;//ç·¨è™Ÿã€é‡‘é¡
+			scanf("%d %d", &a, &b);
+			s1[i].income -= b;
+			s1[a - 1].income += b;
+			s1[a - 1].count++;
+		}
+	}
+	peo temp = { 0 };
+	for (i = 0; i < n-1; i++) {
+		for (j = i + 1; j < n; j++) {
+			if (s1[i].income < s1[j].income) {
+				temp = s1[i];
+				s1[i] = s1[j];
+				s1[j] = temp;
+			}
+		}
+	}
+	for (i = 0; i < n; i++) {
+		if (s1[i].income == s1[i + 1].income) {
+			if (s1[i].count > s1[i+1].count) {
+				//printf("%d %.2lf\n", s1[i].num, s1[i].income / 100);
+			}
+			else if(s1[i].count < s1[i+1].count){
+				temp = s1[i];
+				s1[i] = s1[i + 1];
+				s1[i + 1] = temp;
+				//printf("%d %.2lf\n", s1[i].num, s1[i].income / 100);
+			}
+			else {
+				if (s1[i].num > s1[i + 1].num) {
+					temp = s1[i];
+					s1[i] = s1[i + 1];
+					s1[i + 1] = temp;
+				}
+			}
+		}
+		//else {
+		printf("%d %.2lf\n", s1[i].num, s1[i].income / 100);
+		//}
+	}
 }*/
