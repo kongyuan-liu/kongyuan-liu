@@ -1666,3 +1666,291 @@ int main()
 		//}
 	}
 }*/
+//L2-015 互评成绩
+/*#include<stdio.h>
+#define max 10010
+int n, k, m;
+int arr[max] = { 0 };//記錄每份作业的评审数
+double score[max] = { 0 };//記錄每份作业的最后成绩
+void Score(int* arr);//此函數除去兩個極限值
+int main()
+{
+	int i, j;
+	scanf("%d %d %d", &n, &k, &m);
+	for (i = 0; i < n; i++) {
+		for (j = 0; j < k; j++) {
+			scanf("%d", &arr[j]);
+			//score[i] += arr[j];
+			//printf("%d ", arr[j]);
+		}
+		//score[i] /= (k-2);
+		Score(arr);
+		for (j = 0; j < k; j++) {
+			score[i] += arr[j];
+			//printf("%d ", arr[j]);
+		}
+		score[i] /= (k - 2);
+	}
+	double temp = 0;
+	for (i = 0; i < n - 1; i++) {
+		for (j = i + 1; j < n; j++) {
+			if (score[i] > score[j]) {
+				temp = score[i];
+				score[i] = score[j];
+				score[j] = temp;
+			}
+		}
+	}
+	int isFlag = 0;
+	for (i = n - m; i < n; i++) {
+		if (isFlag != 0)
+			printf(" ");
+		else
+			isFlag = 1;
+		printf("%.3lf", score[i]);
+	}
+}
+void Score(int* arr)
+{
+	int i, j;
+	int len = k;
+	int num;
+	for (i = 0; i < len - 1; i++) {
+		for (j = i + 1; j < len; j++) {
+			if (arr[i] > arr[j]) {
+				num = arr[i];
+				arr[i] = arr[j];
+				arr[j] = num;
+			}
+		}
+	}
+	arr[0] = 0, arr[len - 1] = 0;
+	
+}*/
+//L2-017 人以群分
+/*#include<stdio.h>
+#include<stdlib.h>
+#define max 100010
+int arr[max] = { 0 };
+int cmp(const void* a, const void* b);
+int main()
+{
+	int N; scanf("%d", &N);
+	int i, j;
+	int N1, N2;
+	int temp;
+	for (i = 0; i < N; i++) {
+		scanf("%d", &arr[i]);
+	}
+	//for (i = 0; i < N - 1; i++) {
+	//	for (j = i + 1; j < N; j++) {
+	//		if (arr[i] > arr[j]) {
+	//			temp = arr[i];
+	//			arr[i] = arr[j];
+	//			arr[j] = temp;
+	//		}
+	//	}
+	//}這裏要用快排，冒泡會超時
+	qsort(arr, N, sizeof(int), cmp);
+	N1 = N / 2, N2 = N - N1;
+	int sum1 = 0, sum2 = 0;
+	for (i = 0; i < N1; i++) {
+		sum1 += arr[i];
+	}
+	for (i = N1; i < N; i++) {
+		sum2 += arr[i];
+	}
+	printf("Outgoing #: %d\nIntroverted #: %d\nDiff = %d",N2,N1,sum2-sum1);
+	return 0;
+}
+int cmp(const void* a, const void* b) {
+	return (*(int*)a - *(int*)b);
+}*/
+//L2-019 悄悄关注
+/*#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#define max 10010
+typedef struct Person {
+	char arr[5];
+	int zan;
+	char chara;
+}per;
+int isFlag = 0;//標記并判斷
+int cnt = 0;
+int cmp(const void* a, const void* b);
+int main()
+{
+	per s1[max] = { 0 };
+	per s3[max] = { 0 };//存儲悄悄關注的人，排序用
+	int k = 0;
+	int n; scanf("%d", &n);
+	int i, j;
+	for (i = 0; i < n; i++) {
+		scanf("%s", s1[i].arr);
+		s1[i].chara = s1[i].arr[0];
+	}
+	qsort(s1, n, sizeof(per), cmp);
+	int m; scanf("%d", &m);
+	int ave = 0;
+	per s2[max] = { 0 };
+	for (i = 0; i < m; i++) {
+		scanf("%s", s2[i].arr);
+		scanf("%d", &s2[i].zan);
+		ave += s2[i].zan;
+	}
+	ave /= m;
+	for (i = 0; i < m; i++) {//外圍為點贊ID
+		//for (j = 0; j < n;j++) {//裏曾是關注ID
+		//	cnt = 0;
+		//	if (strcmp(s2[i].arr, s1[j].arr) == 0) {
+		//		cnt = 1;//表示此人已關注
+		//		break;
+		//	}
+		//}
+		//if (cnt != 1&&s2[i].zan>ave) {
+		//	isFlag = 1;
+		//	k++;
+		//	strcpy(s3[k].arr, s2[i].arr);
+		//	s3[k].chara = s3[k].arr[0];
+		//	//printf("%s\n", s2[i].arr);
+		//}
+		if (s2[i].zan > ave) {
+			cnt = 0;
+			int left = 0, right = n - 1;
+			if (strcmp(s1[left].arr, s2[i].arr) <= 0 && strcmp(s1[right].arr, s2[i].arr) >= 0) {
+				while (1) {//二分查找
+					if (strcmp(s1[left].arr, s2[i].arr) == 0) {
+						cnt = 1; break;
+					}
+					if (strcmp(s1[right].arr, s2[i].arr) == 0) {
+						cnt = 1; break;
+					}
+					if (right - left == 1) {
+						cnt = 0; break;
+					}
+					int mid = (left + right) / 2;
+					if (strcmp(s1[mid].arr, s2[i].arr) == 0) {
+						cnt = 1; break;
+					}
+					if (strcmp(s1[mid].arr, s2[i].arr) > 0) {
+						right = mid;
+					}
+					else {
+						left = mid;
+					}
+				}
+			}
+			if(cnt==0){
+				strcpy(s3[k++].arr, s2[i].arr);
+			}
+		}
+	}
+	qsort(s3, k, sizeof(per), cmp);
+	if (k == 0) {
+		printf("Bing Mei You");
+	}
+	else {
+		for (i = 0; i <= k; i++) {
+			printf("%s\n", s3[i].arr);
+		}
+	}
+	return 0;
+}
+int cmp(const void* a, const void* b) {
+	per* pa = (per*)a;
+	per* pb = (per*)b;
+	return pa->chara - pb->chara;
+}*/
+/*#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#define max 10010
+typedef struct Person {
+	char arr[10];
+	int zan;
+}per;
+int cnt = 0;//標記并判斷
+int cmp(const void* a, const void* b);
+int main()
+{
+	char s1[max][10];//題目輸入
+	per s[max] = { 0 };//題目輸入
+	char s2[max][10];//存儲悄悄關注的人
+	int k = 0;
+	int n; scanf("%d", &n);
+	int i, j;
+	for (i = 0; i < n; i++) {
+		scanf("%s", s1[i]);
+	}
+	qsort(s1, n, sizeof(s1[0]), cmp);
+	int m; scanf("%d", &m);
+	int ave = 0;
+	for (i = 0; i < m; i++) {
+		scanf("%s", s[i].arr);
+		scanf("%d", &s[i].zan);
+		ave += s[i].zan;
+	}
+	ave /= m;
+	for (i = 0; i < m; i++) {//外圍為點贊ID
+		//for (j = 0; j < n;j++) {//裏曾是關注ID
+		//	cnt = 0;
+		//	if (strcmp(s2[i].arr, s1[j].arr) == 0) {
+		//		cnt = 1;//表示此人已關注
+		//		break;
+		//	}
+		//}
+		//if (cnt != 1&&s2[i].zan>ave) {
+		//	isFlag = 1;
+		//	k++;
+		//	strcpy(s3[k].arr, s2[i].arr);
+		//	s3[k].chara = s3[k].arr[0];
+		//	//printf("%s\n", s2[i].arr);
+		//}
+		if (s[i].zan > ave) {
+			cnt = 0;
+			int left = 0, right = n - 1;
+			if (strcmp(s1[left], s[i].arr) <= 0 && strcmp(s1[right], s[i].arr) >= 0) {
+				while (1) {//二分查找
+					if (strcmp(s1[left], s[i].arr) == 0) {
+						cnt = 1; break;
+					}
+					if (strcmp(s1[right], s[i].arr) == 0) {
+						cnt = 1; break;
+					}
+					if (right - left == 1) {
+						cnt = 0; break;
+					}
+					int mid = (left + right) / 2;
+					if (strcmp(s1[mid], s[i].arr) == 0) {
+						cnt = 1; break;
+					}
+					if (strcmp(s1[mid], s[i].arr) > 0) {
+						right = mid;
+					}
+					else {
+						left = mid;
+					}
+				}
+			}
+			if (cnt == 0) {
+				strcpy(s2[k++], s[i].arr);
+			}
+		}
+	}
+	qsort(s2, k, sizeof(s2[0]), cmp);
+	if (k == 0) {
+		printf("Bing Mei You");
+	}
+	else {
+		for (i = 0; i < k; i++) {
+			printf("%s\n", s2[i]);
+		}
+	}
+	return 0;
+}
+int cmp(const void* a, const void* b) {
+	char* pa = (char*)a;
+	char* pb = (char*)b;
+	return strcmp(pa, pb);
+}*/

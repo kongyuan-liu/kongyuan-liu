@@ -1,2 +1,5 @@
 ﻿  天梯赛-练习集源.c
+C:\Users\空元\source\repos\PTA题目2.0\PTA.exer\天梯赛-练习集源.c(1773,1): warning C4005: “max”: 宏重定义
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\stdlib.h(1282): message : 参见“max”的前一个定义
+C:\Users\空元\source\repos\PTA题目2.0\PTA.exer\天梯赛-练习集源.c(1788,9): warning C4101: “j”: 未引用的局部变量
   PTA题目2.0.vcxproj -> C:\Users\空元\source\repos\PTA题目2.0\PTA.exer\Debug\PTA题目2.0.exe
